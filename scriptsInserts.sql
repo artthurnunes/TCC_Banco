@@ -62,6 +62,8 @@ INSERT INTO TB_ALUNOS (SITUACAO,NOME,TEL1,TEL2,PROFISSAO,SEXO,ESTADO_CIVIL,RG,CP
                     (FALSE,'Arizeu Santana','(19) 5412-5416','(19) 97842-4127','Empresário','Masculino',2,'17.541.571-X','17'
 				    ,'01/12/1970','Joana de Carvalho','Rafael Nascimento','Ricardo Soares','(19) 3578-5746',4,'Av João Darco','2548'
                     ,'Cambaré','Americana',8,'15.548-541');
+                    
+INSERT INTO TB_MEMBROS (NM_MEMBRO) VALUES ('Peito');
                        
 INSERT INTO TB_ALUNOS (NOME,CPF) VALUES ('A','2');
 
@@ -70,3 +72,4 @@ SELECT * FROM TB_ALUNOS;
 USE TCC;
 
 TRUNCATE TB_ALUNOS;
+TRUNCATE TB_MEMBROS;
