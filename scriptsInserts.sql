@@ -63,11 +63,17 @@ INSERT INTO TB_ALUNOS (SITUACAO,NOME,TEL1,TEL2,PROFISSAO,SEXO,ESTADO_CIVIL,RG,CP
 				    ,'01/12/1970','Joana de Carvalho','Rafael Nascimento','Ricardo Soares','(19) 3578-5746',4,'Av João Darco','2548'
                     ,'Cambaré','Americana',8,'15.548-541');
                     
+INSERT INTO TB_EXERCICIOS (NM_EXERCICIO,CD_MEMBRO) VALUES ('Agachamento',20);
+                    
 INSERT INTO TB_MEMBROS (NM_MEMBRO) VALUES ('Peito');
                        
 INSERT INTO TB_ALUNOS (NOME,CPF) VALUES ('A','2');
 
 SELECT * FROM TB_ALUNOS;
+
+SELECT * FROM TB_EXERCICIOS;
+
+SELECT * FROM TB_MEMBROS;
 
 USE TCC;
 
