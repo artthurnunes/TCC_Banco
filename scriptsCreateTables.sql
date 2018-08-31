@@ -43,10 +43,12 @@ CREATE TABLE IF NOT EXISTS TB_REPETICOES (CD_REPETICAO INT NOT NULL AUTO_INCREME
 PRIMARY KEY(CD_REPETICAO)
 )ENGINE = INNODB;
 
+DROP TABLE TB_TREINOSA;
 
-CREATE TABLE IF NOT EXISTS TB_TREINOS (CD_TREINO INT NOT NULL AUTO_INCREMENT
+CREATE TABLE IF NOT EXISTS TB_TREINOSA (CD_TREINOA INT NOT NULL AUTO_INCREMENT
 									   ,DT_INICIO VARCHAR(20)
                                        ,DT_FIM VARCHAR(20)
+                                       ,CD_REGISTRO INT(3)
                                        ,GRUPO_MUSCULARA1 INT(3)
                                        ,EXERCICIOA1 INT(3)
                                        ,REPETICAOA1 INT(3)
@@ -130,8 +132,17 @@ CREATE TABLE IF NOT EXISTS TB_TREINOS (CD_TREINO INT NOT NULL AUTO_INCREMENT
                                        ,OBSERVACAOA5_4 VARCHAR(20)
                                        ,EXERCICIOA5_5 INT(3)
                                        ,REPETICAOA5_5 INT(3)
-                                       ,OBSERVACAOA5_5 VARCHAR(20)
-									
+                                       ,OBSERVACAOA5_5 VARCHAR(20),
+PRIMARY KEY(CD_TREINOA),
+CONSTRAINT FOREIGN KEY (CD_REGISTRO) REFERENCES TB_ALUNOS (CD_REGISTRO)
+);
+
+DROP TABLE TB_ALUNOS;
+							
+DROP TABLE TB_TREINOSB;
+                                
+CREATE TABLE IF NOT EXISTS TB_TREINOSB (CD_TREINOB INT NOT NULL AUTO_INCREMENT
+									   ,CD_REGISTRO INT(3)
                                        ,GRUPO_MUSCULARB1 INT(3)
                                        ,EXERCICIOB1 INT(3)
                                        ,REPETICAOB1 INT(3)
@@ -215,8 +226,15 @@ CREATE TABLE IF NOT EXISTS TB_TREINOS (CD_TREINO INT NOT NULL AUTO_INCREMENT
                                        ,OBSERVACAOB5_4 VARCHAR(20)
                                        ,EXERCICIOB5_5 INT(3)
                                        ,REPETICAOB5_5 INT(3)
-                                       ,OBSERVACAOB5_5 VARCHAR(20)
-                                       
+                                       ,OBSERVACAOB5_5 VARCHAR(20),
+PRIMARY KEY(CD_TREINOB),
+CONSTRAINT FOREIGN KEY (CD_REGISTRO) REFERENCES TB_ALUNOS (CD_REGISTRO)
+);
+
+DROP TABLE TB_TREINOSC;
+						
+CREATE TABLE IF NOT EXISTS TB_TREINOSC (CD_TREINOC INT NOT NULL AUTO_INCREMENT
+								       ,CD_REGISTRO INT(3)
                                        ,GRUPO_MUSCULARC1 INT(3)
                                        ,EXERCICIOC1 INT(3)
                                        ,REPETICAOC1 INT(3)
@@ -301,8 +319,9 @@ CREATE TABLE IF NOT EXISTS TB_TREINOS (CD_TREINO INT NOT NULL AUTO_INCREMENT
                                        ,EXERCICIOC5_5 INT(3)
                                        ,REPETICAOC5_5 INT(3)
                                        ,OBSERVACAOC5_5 VARCHAR(20),
-PRIMARY KEY(CD_TREINO)
-)ENGINE = INNODB;
+PRIMARY KEY(CD_TREINOC),
+CONSTRAINT FOREIGN KEY (CD_REGISTRO) REFERENCES TB_ALUNOS (CD_REGISTRO)
+);
 
 
 
@@ -318,6 +337,10 @@ DROP TABLE TB_EXERCICIOS;
 
 DROP TABLE TB_MEMBROS;
 
+DROP TABLE TB_TREINOS;
+
 DESC tb_alunos;
 
 SELECT * FROM TB_ALUNOS;
+
+SELECT * FROM TB_TREINOSC;
