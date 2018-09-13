@@ -99,9 +99,25 @@ CREATE TABLE IF NOT EXISTS TB_FREQUENCIA_ALUNOS(CD_FREQUENCIA INT NOT NULL AUTO_
                                                 ,CD_REGISTRO INT(3)
                                                 ,DT_ENTRADA VARCHAR(12)
                                                 ,HR_ENTRADA VARCHAR(10)
-                                                ,HR_SAIDA VARCHAR(10),
+                                                ,HR_SAIDA VARCHAR(10)
+                                                ,ON_OFF BOOLEAN DEFAULT FALSE,
 PRIMARY KEY(CD_FREQUENCIA),
 CONSTRAINT FOREIGN KEY (CD_REGISTRO) REFERENCES TB_ALUNOS (CD_REGISTRO) ON DELETE RESTRICT
+)ENGINE = INNODB;
+
+CREATE TABLE IF NOT EXISTS TB_EQUIPAMENTOS(CD_EQUIPAMENTO INT NOT NULL AUTO_INCREMENT
+										   ,NM_EQUIPAMENTO VARCHAR(100)
+                                           ,DT_COMPRA_EQUIPAMENTO VARCHAR(12)
+                                           ,FORNECEDOR_EQUIPAMENTO VARCHAR(12)
+                                           ,NOTA_EQUIPAMENTO VARCHAR(12)
+                                           ,VALOR_EQUIPAMENTO FLOAT(10)
+                                           ,DT_GARANTIA_EQUIPAMENTO VARCHAR(12)
+                                           ,DT_ULTIMA_MANUTENCAO VARCHAR(12)
+                                           ,EMPRESA_MANUTENCAO VARCHAR(100)
+                                           ,DT_GARANTIA_MANUTENCAO VARCHAR(12)
+                                           ,DT_PROXIMA_MANUTENCAO VARCHAR(12)
+                                           ,PROXIMA_EMPRESA VARCHAR(100),
+PRIMARY KEY (CD_EQUIPAMENTO)
 )ENGINE = INNODB;
 
 DROP TABLE TB_TREINOSA;
