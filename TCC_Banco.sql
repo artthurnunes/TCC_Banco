@@ -57,7 +57,7 @@ CREATE TABLE `tb_alunos` (
 
 LOCK TABLES `tb_alunos` WRITE;
 /*!40000 ALTER TABLE `tb_alunos` DISABLE KEYS */;
-INSERT INTO `tb_alunos` VALUES (1,1,'Damiana Nunes','(19) 5413-5417','(19) 98387-7421','Farmacêutica','Feminino',1,'13.874.741','845.547.841-31','25/08/1990','Maria das Dores','João da Silva','Benedito Souza','(19) 3598-5412',1,'Rua Alvares de Carvalho','1205','Jd St Ângelo','Sumaré',5,'13.654-541',NULL),(2,1,'Arthur Nunes','(19) 3887-7450','(19) 98414-5413','Assistênte de Sistemas','Masculino',2,'54.515.547','864.541.574-51','01/02/1987','Celia Maria Pereira','Roberto Américo Nunes','Cleisson Duarte','(19) 3541-5413',3,'Rua Olinda','58','Centro','Sumaré',5,'13.654-541',NULL),(3,1,'Arizeu Santana','(19) 5412-5416','(19) 97842-4127','Empresário','Masculino',2,'17.541.571-X','451.574.841-41','01/12/1970','Joana de Carvalho','Rafael Nascimento','Ricardo Soares','(19) 3578-5746',4,'Av João Darco','2548','Cambaré','Americana',8,'15.548-541',NULL),(4,0,'A','(19) 5412-5416','(19) 97842-4127','Empresário','Masculino',2,'17.541.571-X','1','01/12/1970','Joana de Carvalho','Rafael Nascimento','Ricardo Soares','(19) 3578-5746',4,'Av João Darco','2548','Cambaré','Americana',8,'15.548-541',NULL),(5,0,'Arizeu Santana','(19) 5412-5416','(19) 97842-4127','Empresário','Masculino',2,'17.541.571-X','2','01/12/1970','Joana de Carvalho','Rafael Nascimento','Ricardo Soares','(19) 3578-5746',4,'Av João Darco','2548','Cambaré','Americana',8,'15.548-541',NULL),(6,0,'Arizeu Santana','(19) 5412-5416','(19) 97842-4127','Empresário','Masculino',2,'17.541.571-X','3','01/12/1970','Joana de Carvalho','Rafael Nascimento','Ricardo Soares','(19) 3578-5746',4,'Av João Darco','2548','Cambaré','Americana',8,'15.548-541',NULL),(7,0,'Arizeu Santana','(19) 5412-5416','(19) 97842-4127','Empresário','Masculino',2,'17.541.571-X','4','01/12/1970','Joana de Carvalho','Rafael Nascimento','Ricardo Soares','(19) 3578-5746',4,'Av João Darco','2548','Cambaré','Americana',8,'15.548-541',NULL),(8,0,'Arizeu Santana','(19) 5412-5416','(19) 97842-4127','Empresário','Masculino',2,'17.541.571-X','5','01/12/1970','Joana de Carvalho','Rafael Nascimento','Ricardo Soares','(19) 3578-5746',4,'Av João Darco','2548','Cambaré','Americana',8,'15.548-541',NULL),(9,0,'Arizeu Santana','(19) 5412-5416','(19) 97842-4127','Empresário','Masculino',2,'17.541.571-X','6','01/12/1970','Joana de Carvalho','Rafael Nascimento','Ricardo Soares','(19) 3578-5746',4,'Av João Darco','2548','Cambaré','Americana',8,'15.548-541',NULL),(10,0,'Arizeu Santana','(19) 5412-5416','(19) 97842-4127','Empresário','Masculino',2,'17.541.571-X','7','01/12/1970','Joana de Carvalho','Rafael Nascimento','Ricardo Soares','(19) 3578-5746',4,'Av João Darco','2548','Cambaré','Americana',8,'15.548-541',NULL),(11,0,'Arizeu Santana','(19) 5412-5416','(19) 97842-4127','Empresário','Masculino',2,'17.541.571-X','8','01/12/1970','Joana de Carvalho','Rafael Nascimento','Ricardo Soares','(19) 3578-5746',4,'Av João Darco','2548','Cambaré','Americana',8,'15.548-541',NULL),(12,0,'Arizeu Santana','(19) 5412-5416','(19) 97842-4127','Empresário','Masculino',2,'17.541.571-X','9','01/12/1970','Joana de Carvalho','Rafael Nascimento','Ricardo Soares','(19) 3578-5746',4,'Av João Darco','2548','Cambaré','Americana',8,'15.548-541',NULL),(13,0,'Arizeu Santana','(19) 5412-5416','(19) 97842-4127','Empresário','Masculino',2,'17.541.571-X','10','01/12/1970','Joana de Carvalho','Rafael Nascimento','Ricardo Soares','(19) 3578-5746',4,'Av João Darco','2548','Cambaré','Americana',8,'15.548-541',NULL),(14,0,'Arizeu Santana','(19) 5412-5416','(19) 97842-4127','Empresário','Masculino',2,'17.541.571-X','11','01/12/1970','Joana de Carvalho','Rafael Nascimento','Ricardo Soares','(19) 3578-5746',4,'Av João Darco','2548','Cambaré','Americana',8,'15.548-541',NULL),(15,0,'Arizeu Santana','(19) 5412-5416','(19) 97842-4127','Empresário','Masculino',2,'17.541.571-X','12','01/12/1970','Joana de Carvalho','Rafael Nascimento','Ricardo Soares','(19) 3578-5746',4,'Av João Darco','2548','Cambaré','Americana',8,'15.548-541',NULL),(16,0,'Arizeu Santana','(19) 5412-5416','(19) 97842-4127','Empresário','Masculino',2,'17.541.571-X','13','01/12/1970','Joana de Carvalho','Rafael Nascimento','Ricardo Soares','(19) 3578-5746',4,'Av João Darco','2548','Cambaré','Americana',8,'15.548-541',NULL),(17,0,'Arizeu Santana','(19) 5412-5416','(19) 97842-4127','Empresário','Masculino',2,'17.541.571-X','14','01/12/1970','Joana de Carvalho','Rafael Nascimento','Ricardo Soares','(19) 3578-5746',4,'Av João Darco','2548','Cambaré','Americana',8,'15.548-541',NULL),(18,0,'Arizeu Santana','(19) 5412-5416','(19) 97842-4127','Empresário','Masculino',2,'17.541.571-X','15','01/12/1970','Joana de Carvalho','Rafael Nascimento','Ricardo Soares','(19) 3578-5746',4,'Av João Darco','2548','Cambaré','Americana',8,'15.548-541',NULL),(19,0,'Arizeu Santana','(19) 5412-5416','(19) 97842-4127','Empresário','Masculino',2,'17.541.571-X','16','01/12/1970','Joana de Carvalho','Rafael Nascimento','Ricardo Soares','(19) 3578-5746',4,'Av João Darco','2548','Cambaré','Americana',8,'15.548-541',NULL),(20,0,'Arizeu Santana','(19) 5412-5416','(19) 97842-4127','Empresário','Masculino',2,'17.541.571-X','17','01/12/1970','Joana de Carvalho','Rafael Nascimento','Ricardo Soares','(19) 3578-5746',4,'Av João Darco','2548','Cambaré','Americana',8,'15.548-541',NULL);
+INSERT INTO `tb_alunos` VALUES (1,1,'Damiana Nunes','(19) 5413-5417','(19) 98387-7421','Farmacêutica','Feminino',1,'13.874.741','845.547.841-31','25/08/1990','Maria das Dores','João da Silva','Benedito Souza','(19) 3598-5412',1,'Rua Alvares de Carvalho','1205','Jd St Ângelo','Sumaré',5,'13.654-541',NULL),(2,1,'Arthur Nunes','(19) 3887-7450','(19) 98414-5413','Assistênte de Sistemas','Masculino',2,'54.515.547','864.541.574-51','01/02/1987','Celia Maria Pereira','Roberto Américo Nunes','Cleisson Duarte','(19) 3541-5413',3,'Rua Olinda','58','Centro','Sumaré',5,'13.654-541',NULL),(3,1,'Arizeu Santana teste','(19) 5412-5416','(19) 97842-4127','Empresário','Masculino',2,'17.541.571-X','451.574.841-41','01/12/1970','Joana de Carvalho','Rafael Nascimento','Ricardo Soares','(19) 3578-5746',4,'Av João Darco','2548','Cambaré','Americana',8,'15.548-541',NULL),(4,0,'A','(19) 5412-5416','(19) 97842-4127','Empresário','Masculino',2,'17.541.571-X','1','01/12/1970','Joana de Carvalho','Rafael Nascimento','Ricardo Soares','(19) 3578-5746',4,'Av João Darco','2548','Cambaré','Americana',8,'15.548-541',NULL),(5,0,'Arizeu Santana','(19) 5412-5416','(19) 97842-4127','Empresário','Masculino',2,'17.541.571-X','2','01/12/1970','Joana de Carvalho','Rafael Nascimento','Ricardo Soares','(19) 3578-5746',4,'Av João Darco','2548','Cambaré','Americana',8,'15.548-541',NULL),(6,0,'Arizeu Santana','(19) 5412-5416','(19) 97842-4127','Empresário','Masculino',2,'17.541.571-X','3','01/12/1970','Joana de Carvalho','Rafael Nascimento','Ricardo Soares','(19) 3578-5746',4,'Av João Darco','2548','Cambaré','Americana',8,'15.548-541',NULL),(7,0,'Arizeu Santana','(19) 5412-5416','(19) 97842-4127','Empresário','Masculino',2,'17.541.571-X','4','01/12/1970','Joana de Carvalho','Rafael Nascimento','Ricardo Soares','(19) 3578-5746',4,'Av João Darco','2548','Cambaré','Americana',8,'15.548-541',NULL),(8,0,'Arizeu Santana','(19) 5412-5416','(19) 97842-4127','Empresário','Masculino',2,'17.541.571-X','5','01/12/1970','Joana de Carvalho','Rafael Nascimento','Ricardo Soares','(19) 3578-5746',4,'Av João Darco','2548','Cambaré','Americana',8,'15.548-541',NULL),(9,0,'Arizeu Santana','(19) 5412-5416','(19) 97842-4127','Empresário','Masculino',2,'17.541.571-X','6','01/12/1970','Joana de Carvalho','Rafael Nascimento','Ricardo Soares','(19) 3578-5746',4,'Av João Darco','2548','Cambaré','Americana',8,'15.548-541',NULL),(10,0,'Arizeu Santana','(19) 5412-5416','(19) 97842-4127','Empresário','Masculino',2,'17.541.571-X','7','01/12/1970','Joana de Carvalho','Rafael Nascimento','Ricardo Soares','(19) 3578-5746',4,'Av João Darco','2548','Cambaré','Americana',8,'15.548-541',NULL),(11,0,'Arizeu Santana','(19) 5412-5416','(19) 97842-4127','Empresário','Masculino',2,'17.541.571-X','8','01/12/1970','Joana de Carvalho','Rafael Nascimento','Ricardo Soares','(19) 3578-5746',4,'Av João Darco','2548','Cambaré','Americana',8,'15.548-541',NULL),(12,0,'Arizeu Santana','(19) 5412-5416','(19) 97842-4127','Empresário','Masculino',2,'17.541.571-X','9','01/12/1970','Joana de Carvalho','Rafael Nascimento','Ricardo Soares','(19) 3578-5746',4,'Av João Darco','2548','Cambaré','Americana',8,'15.548-541',NULL),(13,0,'Arizeu Santana','(19) 5412-5416','(19) 97842-4127','Empresário','Masculino',2,'17.541.571-X','10','01/12/1970','Joana de Carvalho','Rafael Nascimento','Ricardo Soares','(19) 3578-5746',4,'Av João Darco','2548','Cambaré','Americana',8,'15.548-541',NULL),(14,0,'Arizeu Santana','(19) 5412-5416','(19) 97842-4127','Empresário','Masculino',2,'17.541.571-X','11','01/12/1970','Joana de Carvalho','Rafael Nascimento','Ricardo Soares','(19) 3578-5746',4,'Av João Darco','2548','Cambaré','Americana',8,'15.548-541',NULL),(15,0,'Arizeu Santana','(19) 5412-5416','(19) 97842-4127','Empresário','Masculino',2,'17.541.571-X','12','01/12/1970','Joana de Carvalho','Rafael Nascimento','Ricardo Soares','(19) 3578-5746',4,'Av João Darco','2548','Cambaré','Americana',8,'15.548-541',NULL),(16,0,'Arizeu Santana','(19) 5412-5416','(19) 97842-4127','Empresário','Masculino',2,'17.541.571-X','13','01/12/1970','Joana de Carvalho','Rafael Nascimento','Ricardo Soares','(19) 3578-5746',4,'Av João Darco','2548','Cambaré','Americana',8,'15.548-541',NULL),(17,0,'Arizeu Santana','(19) 5412-5416','(19) 97842-4127','Empresário','Masculino',2,'17.541.571-X','14','01/12/1970','Joana de Carvalho','Rafael Nascimento','Ricardo Soares','(19) 3578-5746',4,'Av João Darco','2548','Cambaré','Americana',8,'15.548-541',NULL),(18,0,'Arizeu Santana','(19) 5412-5416','(19) 97842-4127','Empresário','Masculino',2,'17.541.571-X','15','01/12/1970','Joana de Carvalho','Rafael Nascimento','Ricardo Soares','(19) 3578-5746',4,'Av João Darco','2548','Cambaré','Americana',8,'15.548-541',NULL),(19,0,'Arizeu Santana','(19) 5412-5416','(19) 97842-4127','Empresário','Masculino',2,'17.541.571-X','16','01/12/1970','Joana de Carvalho','Rafael Nascimento','Ricardo Soares','(19) 3578-5746',4,'Av João Darco','2548','Cambaré','Americana',8,'15.548-541',NULL),(20,0,'Arizeu Santana','(19) 5412-5416','(19) 97842-4127','Empresário','Masculino',2,'17.541.571-X','17','01/12/1970','Joana de Carvalho','Rafael Nascimento','Ricardo Soares','(19) 3578-5746',4,'Av João Darco','2548','Cambaré','Americana',8,'15.548-541',NULL);
 /*!40000 ALTER TABLE `tb_alunos` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -81,6 +81,7 @@ CREATE TABLE `tb_equipamentos` (
   `DT_GARANTIA_MANUTENCAO` varchar(12) DEFAULT NULL,
   `DT_PROXIMA_MANUTENCAO` varchar(12) DEFAULT NULL,
   `PROXIMA_EMPRESA` varchar(100) DEFAULT NULL,
+  `ATIVO` tinyint(1) DEFAULT NULL,
   PRIMARY KEY (`CD_EQUIPAMENTO`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -91,7 +92,7 @@ CREATE TABLE `tb_equipamentos` (
 
 LOCK TABLES `tb_equipamentos` WRITE;
 /*!40000 ALTER TABLE `tb_equipamentos` DISABLE KEYS */;
-INSERT INTO `tb_equipamentos` VALUES (1,'Peck Deck','','','',0,'','','','','13/09/2022',''),(2,'Supino Reto','13/09/2012','teste','34',1000,'teste','teste','teste','teste','test','este');
+INSERT INTO `tb_equipamentos` VALUES (1,'Peck Deck','22/22/2222','2','2',2,'2','22/22/2222','2','2','22/22/2222','2',1),(2,'33333','33/33/3333','333333','3',3,'3','33/33/3333','333','3333','33/33/3333','333',0);
 /*!40000 ALTER TABLE `tb_equipamentos` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -131,16 +132,10 @@ DROP TABLE IF EXISTS `tb_frequencia_alunos`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `tb_frequencia_alunos` (
-  `CD_FREQUENCIA` int(11) NOT NULL AUTO_INCREMENT,
-  `CD_REGISTRO` int(3) DEFAULT NULL,
-  `DT_ENTRADA` varchar(12) DEFAULT NULL,
-  `HR_ENTRADA` varchar(10) DEFAULT NULL,
-  `HR_SAIDA` varchar(10) DEFAULT NULL,
-  `ON_OFF` tinyint(1) DEFAULT '0',
-  PRIMARY KEY (`CD_FREQUENCIA`),
-  KEY `CD_REGISTRO` (`CD_REGISTRO`),
-  CONSTRAINT `tb_frequencia_alunos_ibfk_1` FOREIGN KEY (`CD_REGISTRO`) REFERENCES `tb_alunos` (`CD_REGISTRO`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
+  `CD_REGISTRO` int(3) NOT NULL,
+  `DT_ENTRADA` date DEFAULT NULL,
+  PRIMARY KEY (`CD_REGISTRO`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -149,8 +144,38 @@ CREATE TABLE `tb_frequencia_alunos` (
 
 LOCK TABLES `tb_frequencia_alunos` WRITE;
 /*!40000 ALTER TABLE `tb_frequencia_alunos` DISABLE KEYS */;
-INSERT INTO `tb_frequencia_alunos` VALUES (1,2,'13/09/2018','19:35:11','19:37:02',0),(2,3,'13/09/2018','19:36:04','19:36:57',0),(3,2,'13/09/2018','19:36:26','19:37:02',0),(4,3,'13/09/2018','19:36:40','19:36:57',0),(5,1,'13/09/2018','19:36:44','19:39:09',0),(6,1,'13/09/2018','19:37:09','19:39:09',0),(7,1,'13/09/2018','19:39:01','19:39:09',0);
+INSERT INTO `tb_frequencia_alunos` VALUES (1,'2018-09-16'),(2,'2018-09-16'),(3,'2018-09-16');
 /*!40000 ALTER TABLE `tb_frequencia_alunos` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `tb_frequencia_alunos_historico`
+--
+
+DROP TABLE IF EXISTS `tb_frequencia_alunos_historico`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `tb_frequencia_alunos_historico` (
+  `CD_FREQUENCIA` int(11) NOT NULL AUTO_INCREMENT,
+  `CD_REGISTRO` int(3) DEFAULT NULL,
+  `DT_ENTRADA` date DEFAULT NULL,
+  `HR_ENTRADA` varchar(10) DEFAULT NULL,
+  `HR_SAIDA` varchar(10) DEFAULT NULL,
+  `ON_OFF` tinyint(1) DEFAULT '0',
+  PRIMARY KEY (`CD_FREQUENCIA`),
+  KEY `CD_REGISTRO` (`CD_REGISTRO`),
+  CONSTRAINT `tb_frequencia_alunos_historico_ibfk_1` FOREIGN KEY (`CD_REGISTRO`) REFERENCES `tb_alunos` (`CD_REGISTRO`)
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `tb_frequencia_alunos_historico`
+--
+
+LOCK TABLES `tb_frequencia_alunos_historico` WRITE;
+/*!40000 ALTER TABLE `tb_frequencia_alunos_historico` DISABLE KEYS */;
+INSERT INTO `tb_frequencia_alunos_historico` VALUES (1,3,'2018-09-16','10:59:48','19:02:47',0),(2,3,'2018-09-16','11:01:55','19:02:47',0),(3,3,'2018-09-16','19:00:43','19:02:47',0),(4,3,'2018-09-16','19:02:43','19:02:47',0),(5,1,'2018-09-16','21:31:49','21:31:53',0),(6,2,'2018-09-16','21:31:57','21:32:00',0);
+/*!40000 ALTER TABLE `tb_frequencia_alunos_historico` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -342,11 +367,13 @@ DROP TABLE IF EXISTS `tb_senhas`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `tb_senhas` (
-  `usuario` varchar(20) DEFAULT NULL,
-  `nome` varchar(20) DEFAULT NULL,
-  `senha` varchar(20) DEFAULT NULL,
-  `email` varchar(50) DEFAULT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+  `USUARIO` varchar(20) NOT NULL,
+  `NOME` varchar(100) DEFAULT NULL,
+  `SENHA` varchar(20) DEFAULT NULL,
+  `EMAIL` varchar(50) NOT NULL,
+  PRIMARY KEY (`USUARIO`),
+  UNIQUE KEY `USUARIO` (`USUARIO`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -355,7 +382,7 @@ CREATE TABLE `tb_senhas` (
 
 LOCK TABLES `tb_senhas` WRITE;
 /*!40000 ALTER TABLE `tb_senhas` DISABLE KEYS */;
-INSERT INTO `tb_senhas` VALUES ('anunes','Arthur','1','artthur.nunes@outlook.com'),('zanetti','Paulo','2','zanetti_trabalho@yahoo.com.br'),('','teste','','email@teste.com');
+INSERT INTO `tb_senhas` VALUES ('','TESTE','','teste@outlook.com'),('anunes','Arthur Nunes','2','artthur.nunes@outlook.com');
 /*!40000 ALTER TABLE `tb_senhas` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -778,4 +805,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-09-13 20:39:03
+-- Dump completed on 2018-09-16 21:54:06
