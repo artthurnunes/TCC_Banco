@@ -514,7 +514,8 @@ CREATE TABLE IF NOT EXISTS TB_DESPESAS_PROGRAMADAS(CD_DESPESA INT NOT NULL AUTO_
                                                    ,VALOR FLOAT(10)
                                                    ,VENCIMENTO DATE
                                                    ,PAGO BOOLEAN DEFAULT FALSE
-                                                   ,PROGRAMADA BOOLEAN DEFAULT FALSE,
+                                                   ,PROGRAMADA BOOLEAN DEFAULT FALSE
+                                                   ,DATA_PAGAMENTO DATE,
 PRIMARY KEY (CD_DESPESA)
 )ENGINE = INNODB;
 
