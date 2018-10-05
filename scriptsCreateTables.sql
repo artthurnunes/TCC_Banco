@@ -2,6 +2,15 @@ USE TCC;
 
 DROP TABLE TB_SENHAS;
 
+-- VIEW PARA O SELECT DE MENSALIDADE, TRAZ OS ALUNOS SEM REPETIR DADOS. 
+CREATE or replace 
+VIEW v_max_cd_registro AS
+    SELECT cd_registro, 
+        MAX(c.CD_PLANO_ALUNO) AS MAX1
+    FROM
+        tb_planos_alunos c
+    GROUP BY c.CD_REGISTRO;
+
 CREATE TABLE IF NOT EXISTS TB_SENHAS (USUARIO VARCHAR(20) UNIQUE
 									 ,NOME VARCHAR(100)
                                      ,SENHA VARCHAR(20)
