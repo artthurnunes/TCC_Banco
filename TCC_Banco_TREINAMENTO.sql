@@ -48,7 +48,7 @@ CREATE TABLE `tb_alunos` (
   `IMG_PERFIL` blob,
   PRIMARY KEY (`CD_REGISTRO`),
   UNIQUE KEY `CPF` (`CPF`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -57,7 +57,7 @@ CREATE TABLE `tb_alunos` (
 
 LOCK TABLES `tb_alunos` WRITE;
 /*!40000 ALTER TABLE `tb_alunos` DISABLE KEYS */;
-INSERT INTO `tb_alunos` VALUES (1,1,'Arthur Roberto Pereira Nunes','(19)98387 6779','','Assistênte de Sistemas','Masculino',1,'13.345.432\'','394.878.748-30','05/10/1989','Célia Maria Pereira ','Roberto Américo Nunes','Damiana Nunes','98128 5336',3,'Rua Flora Ferreira Gomes','81','Parque Florelly','Sumaré',25,'13.178.224',NULL),(2,1,'Damiana Aparecida Nunes','(19)98128 5336','','Farmacêutica','Feminino',1,'12.545.547','557.811.516-57','25/08/1990','Maria Aparecida','Orivaldo Barreto','Arthur Nunes','98387 6779',3,'Rua Flora Ferreira Gomes','81','Parque Florelly','Sumaré',25,'13.178-224',NULL),(3,1,'Arizeu Santana','(19)5541-5415','','Programador','Masculino',2,'15.547.547','245.784.161-08','10/09/1985','Creuza do Nascimento','Joel Moraes Santana','Neuzeli','9841-5845',10,'Rua das Gaivotas','1054','Centro','Sumaré',25,'13.178-215',NULL),(4,1,'Joaquim da Barra','(19)98754-5451','','Professor','Masculino',3,'15.544.541','548.481.651-50','20/01/1970','Julia Meireles','','Julia','8974 3245',1,'Rua das dores','10','Jardim Ãngela','Campinas',25,'13.745-541',NULL),(5,1,'Ana Lucia Nunes','(19)98746-5410','(19)3546-5150','Médica','Feminino',2,'15.541-541','245.158.451-54','01/09/1995','Damiana Nunes','Arthur Nunes','Arthur','98387 6779',0,'Rua Flora Ferreira Gomes','81','Parque Florelly','Sumaré',25,'13.178-224',NULL),(6,0,'Guimareas dos Santos','(19)98745-5412','','Pintor','Masculino',1,'7.874.574','248.794.651-65','27/03/1980','Maria de Jesus','Pedro Nazaré','Hilton','98745-8412',6,'Rua das Naçoes Unidas','28','Jardim dos ipes','Sumaré',25,'13.178-541',NULL),(7,1,'Fernando Barbosa','(11)98745-8742','(19)98742-5412','Empresário','Masculino',1,'13.541-87','546.547.984-65','15/04/1985','Raquel Lima','Robson Almeida Campos','Rafael','(11)7894-5415',2,'Av. dos Amarais','1574','Aclimação','Sumaré',25,'13.178-541',NULL);
+INSERT INTO `tb_alunos` VALUES (1,1,'Arthur Roberto Pereira Nunes','(19)98387 6779','','Assistênte de Sistemas','Masculino',1,'13.345.432\'','394.878.748-30','05/10/1989','Célia Maria Pereira ','Roberto Américo Nunes','Damiana Nunes','98128 5336',3,'Rua Flora Ferreira Gomes','81','Parque Florelly','Sumaré',25,'13.178.224',NULL),(2,1,'Damiana Aparecida Nunes','(19)98128 5336','','Farmacêutica','Feminino',1,'12.545.547','557.811.516-57','25/08/1990','Maria Aparecida','Orivaldo Barreto','Arthur Nunes','98387 6779',3,'Rua Flora Ferreira Gomes','81','Parque Florelly','Sumaré',25,'13.178-224',NULL),(3,1,'Arizeu Santana','(19)5541-5415','','Programador','Masculino',2,'15.547.547','245.784.161-08','10/09/1985','Creuza do Nascimento','Joel Moraes Santana','Neuzeli','9841-5845',10,'Rua das Gaivotas','1054','Centro','Sumaré',25,'13.178-215',NULL),(4,1,'Joaquim da Barra','(19)98754-5451','','Professor','Masculino',3,'15.544.541','548.481.651-50','20/01/1970','Julia Meireles','','Julia','8974 3245',1,'Rua das dores','10','Jardim Ãngela','Campinas',25,'13.745-541',NULL),(5,1,'Ana Lucia Nunes','(19)98746-5410','(19)3546-5150','Médica','Feminino',2,'15.541-541','245.158.451-54','01/09/1995','Damiana Nunes','Arthur Nunes','Arthur','98387 6779',0,'Rua Flora Ferreira Gomes','81','Parque Florelly','Sumaré',25,'13.178-224',NULL),(6,0,'Guimareas dos Santos','(19)98745-5412','','Pintor','Masculino',1,'7.874.574','248.794.651-65','27/03/1980','Maria de Jesus','Pedro Nazaré','Hilton','98745-8412',6,'Rua das Naçoes Unidas','28','Jardim dos ipes','Sumaré',25,'13.178-541',NULL),(7,1,'Fernando Barbosa','(11)98745-8742','(19)98742-5412','Empresário','Masculino',1,'13.541-87','546.547.984-65','15/04/1985','Raquel Lima','Robson Almeida Campos','Rafael','(11)7894-5415',2,'Av. dos Amarais','1574','Aclimação','Sumaré',25,'13.178-541',NULL),(8,1,'Teste mensalidade pagamento','','','',NULL,0,'','546.546.546-46','','','','','',0,'','','','',0,'',NULL);
 /*!40000 ALTER TABLE `tb_alunos` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -75,8 +75,9 @@ CREATE TABLE `tb_despesas_programadas` (
   `VENCIMENTO` date DEFAULT NULL,
   `PAGO` tinyint(1) DEFAULT '0',
   `PROGRAMADA` tinyint(1) DEFAULT '0',
+  `DATA_PAGAMENTO` date DEFAULT NULL,
   PRIMARY KEY (`CD_DESPESA`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -85,7 +86,7 @@ CREATE TABLE `tb_despesas_programadas` (
 
 LOCK TABLES `tb_despesas_programadas` WRITE;
 /*!40000 ALTER TABLE `tb_despesas_programadas` DISABLE KEYS */;
-INSERT INTO `tb_despesas_programadas` VALUES (1,'Agua',90.89,'2018-10-10',0,1),(2,'Aluguel',1000,'2018-10-10',0,1),(4,'Internet',100,'2018-10-05',0,1),(5,'Troca de cabo de aço puxador',20,'2018-09-28',1,0);
+INSERT INTO `tb_despesas_programadas` VALUES (1,'Luz',1050,'2018-10-01',1,1,'2018-10-05'),(2,'Agua',78.8,'2018-10-02',1,1,'2018-10-04');
 /*!40000 ALTER TABLE `tb_despesas_programadas` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -172,7 +173,7 @@ CREATE TABLE `tb_frequencia_alunos` (
 
 LOCK TABLES `tb_frequencia_alunos` WRITE;
 /*!40000 ALTER TABLE `tb_frequencia_alunos` DISABLE KEYS */;
-INSERT INTO `tb_frequencia_alunos` VALUES (1,'2018-09-27'),(2,'2018-09-28'),(3,'2018-09-28'),(4,'2018-09-28'),(5,'2018-09-28'),(6,'2018-09-28'),(7,'2018-09-20');
+INSERT INTO `tb_frequencia_alunos` VALUES (1,'2018-10-02'),(2,'2018-10-02'),(3,'2018-09-28'),(4,'2018-10-02'),(5,'2018-10-02'),(6,'2018-09-28'),(7,'2018-09-20'),(8,'2018-10-04');
 /*!40000 ALTER TABLE `tb_frequencia_alunos` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -193,7 +194,7 @@ CREATE TABLE `tb_frequencia_alunos_historico` (
   PRIMARY KEY (`CD_FREQUENCIA`),
   KEY `CD_REGISTRO` (`CD_REGISTRO`),
   CONSTRAINT `tb_frequencia_alunos_historico_ibfk_1` FOREIGN KEY (`CD_REGISTRO`) REFERENCES `tb_alunos` (`CD_REGISTRO`)
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -202,7 +203,7 @@ CREATE TABLE `tb_frequencia_alunos_historico` (
 
 LOCK TABLES `tb_frequencia_alunos_historico` WRITE;
 /*!40000 ALTER TABLE `tb_frequencia_alunos_historico` DISABLE KEYS */;
-INSERT INTO `tb_frequencia_alunos_historico` VALUES (1,1,'2018-09-27','21:47:02','21:54:35',0),(2,2,'2018-09-28','08:38:24','08:44:13',0),(3,3,'2018-09-28','08:50:16','08:52:19',0),(4,4,'2018-09-28','09:05:28','09:05:36',0),(5,5,'2018-09-28','09:19:07','09:22:56',0),(6,5,'2018-09-28','09:22:52','09:22:56',0),(7,6,'2018-09-28','09:22:59','09:23:02',0),(8,7,'2018-09-28','09:30:25','09:30:30',0);
+INSERT INTO `tb_frequencia_alunos_historico` VALUES (1,1,'2018-09-27','21:47:02','21:54:35',0),(2,2,'2018-09-28','08:38:24','08:44:13',0),(3,3,'2018-09-28','08:50:16','08:52:19',0),(4,4,'2018-09-28','09:05:28','09:05:36',0),(5,5,'2018-09-28','09:19:07','09:22:56',0),(6,5,'2018-09-28','09:22:52','09:22:56',0),(7,6,'2018-09-28','09:22:59','09:23:02',0),(8,7,'2018-09-28','09:30:25','09:30:30',0),(9,5,'2018-10-02','12:01:26','12:01:29',0),(10,1,'2018-10-02','12:01:53','12:02:04',0),(11,2,'2018-10-02','12:01:57','12:02:07',0),(12,4,'2018-10-02','12:02:00','12:02:10',0),(13,8,'2018-10-02','15:22:15','15:22:20',0),(14,8,'2018-10-04','10:18:41','10:18:48',0);
 /*!40000 ALTER TABLE `tb_frequencia_alunos_historico` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -222,7 +223,7 @@ CREATE TABLE `tb_historico_pagamentos_alunos` (
   PRIMARY KEY (`CD_PAGAMENTO`),
   KEY `CD_REGISTRO` (`CD_REGISTRO`),
   CONSTRAINT `tb_historico_pagamentos_alunos_ibfk_1` FOREIGN KEY (`CD_REGISTRO`) REFERENCES `tb_alunos` (`CD_REGISTRO`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -231,7 +232,7 @@ CREATE TABLE `tb_historico_pagamentos_alunos` (
 
 LOCK TABLES `tb_historico_pagamentos_alunos` WRITE;
 /*!40000 ALTER TABLE `tb_historico_pagamentos_alunos` DISABLE KEYS */;
-INSERT INTO `tb_historico_pagamentos_alunos` VALUES (1,1,'2018-10-05',NULL,NULL),(2,2,'2018-10-10',NULL,NULL),(3,3,'2018-09-07',NULL,NULL),(4,4,'2018-10-30',NULL,NULL),(5,5,'2018-10-05',NULL,NULL),(6,6,'2018-10-10',NULL,NULL),(7,7,'2018-10-15',NULL,NULL);
+INSERT INTO `tb_historico_pagamentos_alunos` VALUES (1,1,'2018-10-10',NULL,NULL),(2,2,'2018-10-10',NULL,NULL),(3,3,'2018-09-07','2018-10-04',85),(4,4,'2018-10-30',NULL,NULL),(5,5,'2018-05-01',NULL,NULL),(6,6,'2018-05-01',NULL,NULL),(7,7,'2018-10-15',NULL,NULL),(8,8,'2018-01-01','2018-10-04',80),(9,8,'2018-02-01','2018-10-04',95),(10,8,'2018-03-01','2018-10-04',92),(11,8,'2018-04-01','2018-10-04',94),(12,8,'2018-05-01','2018-10-04',90),(13,8,'2018-09-01','2018-10-04',90),(14,3,'2018-11-01',NULL,NULL),(15,8,'2018-11-05',NULL,NULL);
 /*!40000 ALTER TABLE `tb_historico_pagamentos_alunos` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -345,6 +346,7 @@ DROP TABLE IF EXISTS `tb_planos_alunos`;
 CREATE TABLE `tb_planos_alunos` (
   `CD_PLANO_ALUNO` int(11) NOT NULL AUTO_INCREMENT,
   `CD_REGISTRO` int(3) DEFAULT NULL,
+  `SN_ATIVO` tinyint(1) DEFAULT NULL,
   `CD_PLANO` int(3) DEFAULT NULL,
   `VALOR` float DEFAULT NULL,
   `TP_DESCONTO` varchar(2) DEFAULT NULL,
@@ -353,7 +355,7 @@ CREATE TABLE `tb_planos_alunos` (
   PRIMARY KEY (`CD_PLANO_ALUNO`),
   KEY `CD_REGISTRO` (`CD_REGISTRO`),
   CONSTRAINT `tb_planos_alunos_ibfk_1` FOREIGN KEY (`CD_REGISTRO`) REFERENCES `tb_alunos` (`CD_REGISTRO`)
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -362,7 +364,7 @@ CREATE TABLE `tb_planos_alunos` (
 
 LOCK TABLES `tb_planos_alunos` WRITE;
 /*!40000 ALTER TABLE `tb_planos_alunos` DISABLE KEYS */;
-INSERT INTO `tb_planos_alunos` VALUES (1,1,1,100,'%',0,5),(2,2,4,60,'R$',5,10),(3,3,1,100,'%',0,15),(4,4,3,80,'%',0,30),(5,3,1,85,'R$',15,7),(6,5,4,65,'%',0,5),(7,6,1,100,'%',0,10),(8,7,1,95,'%',5,15);
+INSERT INTO `tb_planos_alunos` VALUES (1,1,0,1,100,'%',0,5),(2,3,1,2,90,'%',0,1),(3,1,1,1,100,'%',0,10),(4,5,0,2,90,'%',0,1),(5,5,0,4,65,'%',0,1),(6,5,1,3,80,'%',0,1);
 /*!40000 ALTER TABLE `tb_planos_alunos` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -852,6 +854,37 @@ LOCK TABLES `tb_treinosc` WRITE;
 INSERT INTO `tb_treinosc` VALUES (1,1,3,23,2,'',22,1,'',24,1,'',25,1,'',23,8,'',23,8,'',23,8,'',10,21,1,'',20,1,'',21,8,'',21,8,'',21,8,'',21,8,'',21,8,'',9,27,3,'',28,3,'',27,8,'',27,8,'',27,8,'',27,8,'',27,8,'',8,38,1,'',39,3,'',38,8,'',38,8,'',38,8,'',38,8,'',38,8,'',7,37,3,'',35,3,'',36,3,'',37,8,'',37,8,'',37,8,'',37,8,''),(2,2,10,21,1,'',20,3,'',21,8,'',21,8,'',21,8,'',21,8,'',21,8,'',12,1,10,'',2,10,'',3,8,'',3,8,'',3,8,'',3,8,'',3,8,'',12,3,8,'',3,8,'',3,8,'',3,8,'',3,8,'',3,8,'',3,8,'',12,3,8,'',3,8,'',3,8,'',3,8,'',3,8,'',3,8,'',3,8,'',12,3,8,'',3,8,'',3,8,'',3,8,'',3,8,'',3,8,'',3,8,''),(3,3,12,3,8,'',3,8,'',3,8,'',3,8,'',3,8,'',3,8,'',3,8,'',12,3,8,'',3,8,'',3,8,'',3,8,'',3,8,'',3,8,'',3,8,'',12,3,8,'',3,8,'',3,8,'',3,8,'',3,8,'',3,8,'',3,8,'',12,3,8,'',3,8,'',3,8,'',3,8,'',3,8,'',3,8,'',3,8,'',12,3,8,'',3,8,'',3,8,'',3,8,'',3,8,'',3,8,'',3,8,''),(4,4,12,3,8,'',3,8,'',3,8,'',3,8,'',3,8,'',3,8,'',3,8,'',12,3,8,'',3,8,'',3,8,'',3,8,'',3,8,'',3,8,'',3,8,'',12,3,8,'',3,8,'',3,8,'',3,8,'',3,8,'',3,8,'',3,8,'',12,3,8,'',3,8,'',3,8,'',3,8,'',3,8,'',3,8,'',3,8,'',12,3,8,'',3,8,'',3,8,'',3,8,'',3,8,'',3,8,'',3,8,''),(5,6,12,3,8,'',3,8,'',3,8,'',3,8,'',3,8,'',3,8,'',3,8,'',12,3,8,'',3,8,'',3,8,'',3,8,'',3,8,'',3,8,'',3,8,'',12,3,8,'',3,8,'',3,8,'',3,8,'',3,8,'',3,8,'',3,8,'',12,3,8,'',3,8,'',3,8,'',3,8,'',3,8,'',3,8,'',3,8,'',12,3,8,'',3,8,'',3,8,'',3,8,'',3,8,'',3,8,'',3,8,'');
 /*!40000 ALTER TABLE `tb_treinosc` ENABLE KEYS */;
 UNLOCK TABLES;
+
+--
+-- Temporary view structure for view `v_max_cd_registro`
+--
+
+DROP TABLE IF EXISTS `v_max_cd_registro`;
+/*!50001 DROP VIEW IF EXISTS `v_max_cd_registro`*/;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
+/*!50001 CREATE VIEW `v_max_cd_registro` AS SELECT 
+ 1 AS `cd_registro`,
+ 1 AS `MAX1`*/;
+SET character_set_client = @saved_cs_client;
+
+--
+-- Final view structure for view `v_max_cd_registro`
+--
+
+/*!50001 DROP VIEW IF EXISTS `v_max_cd_registro`*/;
+/*!50001 SET @saved_cs_client          = @@character_set_client */;
+/*!50001 SET @saved_cs_results         = @@character_set_results */;
+/*!50001 SET @saved_col_connection     = @@collation_connection */;
+/*!50001 SET character_set_client      = utf8 */;
+/*!50001 SET character_set_results     = utf8 */;
+/*!50001 SET collation_connection      = utf8_general_ci */;
+/*!50001 CREATE ALGORITHM=UNDEFINED */
+/*!50013 DEFINER=`root`@`localhost` SQL SECURITY DEFINER */
+/*!50001 VIEW `v_max_cd_registro` AS select `c`.`CD_REGISTRO` AS `cd_registro`,max(`c`.`CD_PLANO_ALUNO`) AS `MAX1` from `tb_planos_alunos` `c` group by `c`.`CD_REGISTRO` */;
+/*!50001 SET character_set_client      = @saved_cs_client */;
+/*!50001 SET character_set_results     = @saved_cs_results */;
+/*!50001 SET collation_connection      = @saved_col_connection */;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -862,4 +895,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-09-28  9:40:15
+-- Dump completed on 2018-10-09 16:14:18

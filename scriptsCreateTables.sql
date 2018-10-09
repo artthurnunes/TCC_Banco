@@ -11,6 +11,12 @@ VIEW v_max_cd_registro AS
         tb_planos_alunos c
     GROUP BY c.CD_REGISTRO;
 
+SELECT c.cd_registro,c.valor, 
+        MAX(c.CD_PLANO_ALUNO) AS MAX1
+    FROM
+        tb_planos_alunos c
+    GROUP BY c.CD_REGISTRO,c.valor;
+
 CREATE TABLE IF NOT EXISTS TB_SENHAS (USUARIO VARCHAR(20) UNIQUE
 									 ,NOME VARCHAR(100)
                                      ,SENHA VARCHAR(20)
@@ -100,8 +106,11 @@ CREATE TABLE IF NOT EXISTS TB_PLANOS_VALORES (CD_PLANO INT NOT NULL AUTO_INCREME
 PRIMARY KEY(CD_PLANO)
 )ENGINE = INNODB;
 
+DROP TABLE TB_PLANOS_ALUNOS;
+
 CREATE TABLE IF NOT EXISTS TB_PLANOS_ALUNOS (CD_PLANO_ALUNO INT NOT NULL AUTO_INCREMENT
 											 ,CD_REGISTRO INT(3)
+                                             ,SN_ATIVO BOOLEAN
                                              ,CD_PLANO INT(3)
                                              ,VALOR FLOAT(8)
                                              ,TP_DESCONTO VARCHAR(2)
