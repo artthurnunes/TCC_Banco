@@ -47,7 +47,7 @@ CREATE TABLE `tb_alunos` (
   `END_CEP` varchar(25) DEFAULT NULL,
   PRIMARY KEY (`CD_REGISTRO`),
   UNIQUE KEY `CPF` (`CPF`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -122,11 +122,11 @@ DROP TABLE IF EXISTS `tb_fotos_alunos`;
 CREATE TABLE `tb_fotos_alunos` (
   `CD_IMAGEM` int(11) NOT NULL AUTO_INCREMENT,
   `CD_REGISTRO` int(3) DEFAULT NULL,
-  `IMAGEM` longblob,
+  `IMAGEM` blob,
   PRIMARY KEY (`CD_IMAGEM`),
   KEY `FK_CD_REGISTRO7` (`CD_REGISTRO`),
   CONSTRAINT `FK_CD_REGISTRO7` FOREIGN KEY (`CD_REGISTRO`) REFERENCES `tb_alunos` (`CD_REGISTRO`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -179,7 +179,7 @@ CREATE TABLE `tb_historico_pagamentos_alunos` (
   PRIMARY KEY (`CD_PAGAMENTO`),
   KEY `FK_CD_REGISTRO1` (`CD_REGISTRO`),
   CONSTRAINT `FK_CD_REGISTRO1` FOREIGN KEY (`CD_REGISTRO`) REFERENCES `tb_alunos` (`CD_REGISTRO`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -271,7 +271,7 @@ CREATE TABLE `tb_planos_alunos` (
   PRIMARY KEY (`CD_PLANO_ALUNO`),
   KEY `FK_CD_REGISTRO3` (`CD_REGISTRO`),
   CONSTRAINT `FK_CD_REGISTRO3` FOREIGN KEY (`CD_REGISTRO`) REFERENCES `tb_alunos` (`CD_REGISTRO`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -741,4 +741,4 @@ SET character_set_client = @saved_cs_client;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-10-10 16:14:09
+-- Dump completed on 2018-10-10 12:08:45

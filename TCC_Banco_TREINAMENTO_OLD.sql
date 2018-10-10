@@ -45,10 +45,21 @@ CREATE TABLE `tb_alunos` (
   `END_CIDADE` varchar(50) DEFAULT NULL,
   `END_ESTADO` int(11) DEFAULT NULL,
   `END_CEP` varchar(25) DEFAULT NULL,
+  `IMG_PERFIL` blob,
   PRIMARY KEY (`CD_REGISTRO`),
   UNIQUE KEY `CPF` (`CPF`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `tb_alunos`
+--
+
+LOCK TABLES `tb_alunos` WRITE;
+/*!40000 ALTER TABLE `tb_alunos` DISABLE KEYS */;
+INSERT INTO `tb_alunos` VALUES (1,1,'Arthur Roberto Pereira Nunes','(19)98387 6779','','Assistênte de Sistemas','Masculino',1,'13.345.432\'','394.878.748-30','05/10/1989','Célia Maria Pereira ','Roberto Américo Nunes','Damiana Nunes','98128 5336',3,'Rua Flora Ferreira Gomes','81','Parque Florelly','Sumaré',25,'13.178.224',NULL),(2,1,'Damiana Aparecida Nunes','(19)98128 5336','','Farmacêutica','Feminino',1,'12.545.547','557.811.516-57','25/08/1990','Maria Aparecida','Orivaldo Barreto','Arthur Nunes','98387 6779',3,'Rua Flora Ferreira Gomes','81','Parque Florelly','Sumaré',25,'13.178-224',NULL),(3,1,'Arizeu Santana','(19)5541-5415','','Programador','Masculino',2,'15.547.547','245.784.161-08','10/09/1985','Creuza do Nascimento','Joel Moraes Santana','Neuzeli','9841-5845',10,'Rua das Gaivotas','1054','Centro','Sumaré',25,'13.178-215',NULL),(4,1,'Joaquim da Barra','(19)98754-5451','','Professor','Masculino',3,'15.544.541','548.481.651-50','20/01/1970','Julia Meireles','','Julia','8974 3245',1,'Rua das dores','10','Jardim Ãngela','Campinas',25,'13.745-541',NULL),(5,1,'Ana Lucia Nunes','(19)98746-5410','(19)3546-5150','Médica','Feminino',2,'15.541-541','245.158.451-54','01/09/1995','Damiana Nunes','Arthur Nunes','Arthur','98387 6779',0,'Rua Flora Ferreira Gomes','81','Parque Florelly','Sumaré',25,'13.178-224',NULL),(6,0,'Guimareas dos Santos','(19)98745-5412','','Pintor','Masculino',1,'7.874.574','248.794.651-65','27/03/1980','Maria de Jesus','Pedro Nazaré','Hilton','98745-8412',6,'Rua das Naçoes Unidas','28','Jardim dos ipes','Sumaré',25,'13.178-541',NULL),(7,1,'Fernando Barbosa','(11)98745-8742','(19)98742-5412','Empresário','Masculino',1,'13.541-87','546.547.984-65','15/04/1985','Raquel Lima','Robson Almeida Campos','Rafael','(11)7894-5415',2,'Av. dos Amarais','1574','Aclimação','Sumaré',25,'13.178-541',NULL),(8,1,'Teste mensalidade pagamento','','','',NULL,0,'','546.546.546-46','','','','','',0,'','','','',0,'',NULL);
+/*!40000 ALTER TABLE `tb_alunos` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `tb_despesas_programadas`
@@ -66,8 +77,18 @@ CREATE TABLE `tb_despesas_programadas` (
   `PROGRAMADA` tinyint(1) DEFAULT '0',
   `DATA_PAGAMENTO` date DEFAULT NULL,
   PRIMARY KEY (`CD_DESPESA`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `tb_despesas_programadas`
+--
+
+LOCK TABLES `tb_despesas_programadas` WRITE;
+/*!40000 ALTER TABLE `tb_despesas_programadas` DISABLE KEYS */;
+INSERT INTO `tb_despesas_programadas` VALUES (1,'Luz',1050,'2018-10-01',1,1,'2018-10-05'),(2,'Agua',78.8,'2018-10-02',1,1,'2018-10-04');
+/*!40000 ALTER TABLE `tb_despesas_programadas` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `tb_equipamentos`
@@ -91,8 +112,18 @@ CREATE TABLE `tb_equipamentos` (
   `PROXIMA_EMPRESA` varchar(150) DEFAULT NULL,
   `ATIVO` tinyint(1) DEFAULT NULL,
   PRIMARY KEY (`CD_EQUIPAMENTO`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `tb_equipamentos`
+--
+
+LOCK TABLES `tb_equipamentos` WRITE;
+/*!40000 ALTER TABLE `tb_equipamentos` DISABLE KEYS */;
+INSERT INTO `tb_equipamentos` VALUES (1,'Esteira 1','27/09/2018','Esteiras do Brasil','1',3.89,'3 anos','27/09/2018','Esteiras do Brasil','3 anos','27/01/2019','Esteiras do Brasil',1),(2,'Esteira 2','27/09/2018','Esteiras do Brasil','2',4.039,'3 anos','27/09/2018','Esteiras do Brasil','3 anos','27/01/2018','Esteiras do Brasil',1),(3,'Peck Deck','28/09/2018','Fitness World','215',5.842,'3 anos','28/09/2018','Fitness World','3 anos','28/02/2018','Fitness World',1);
+/*!40000 ALTER TABLE `tb_equipamentos` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `tb_exercicios`
@@ -107,27 +138,20 @@ CREATE TABLE `tb_exercicios` (
   `CD_MEMBRO` int(11) DEFAULT NULL,
   PRIMARY KEY (`CD_EXERCICIO`),
   UNIQUE KEY `NM_EXERCICIO` (`NM_EXERCICIO`),
-  KEY `FK_CD_MEMBRO` (`CD_MEMBRO`),
-  CONSTRAINT `FK_CD_MEMBRO` FOREIGN KEY (`CD_MEMBRO`) REFERENCES `tb_membros` (`CD_MEMBRO`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  KEY `CD_MEMBRO` (`CD_MEMBRO`),
+  CONSTRAINT `tb_exercicios_ibfk_1` FOREIGN KEY (`CD_MEMBRO`) REFERENCES `tb_membros` (`CD_MEMBRO`)
+) ENGINE=InnoDB AUTO_INCREMENT=45 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Table structure for table `tb_fotos_alunos`
+-- Dumping data for table `tb_exercicios`
 --
 
-DROP TABLE IF EXISTS `tb_fotos_alunos`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `tb_fotos_alunos` (
-  `CD_IMAGEM` int(11) NOT NULL AUTO_INCREMENT,
-  `CD_REGISTRO` int(3) DEFAULT NULL,
-  `IMAGEM` longblob,
-  PRIMARY KEY (`CD_IMAGEM`),
-  KEY `FK_CD_REGISTRO7` (`CD_REGISTRO`),
-  CONSTRAINT `FK_CD_REGISTRO7` FOREIGN KEY (`CD_REGISTRO`) REFERENCES `tb_alunos` (`CD_REGISTRO`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
-/*!40101 SET character_set_client = @saved_cs_client */;
+LOCK TABLES `tb_exercicios` WRITE;
+/*!40000 ALTER TABLE `tb_exercicios` DISABLE KEYS */;
+INSERT INTO `tb_exercicios` VALUES (1,'RETO',12),(2,'SUPRA',12),(3,'OBLIQUO',12),(4,'ESTEIRA',11),(5,'BICICLETA',11),(6,'CORDA',11),(8,'ROSCA INVERSA',6),(9,'ROLAMENTO DE BARRA',6),(10,'HALTER GIRO',6),(11,'ROSCA DIRETA',4),(12,'SCOTTY',4),(13,'ALTERNADO',4),(14,'CONCENTRADO',4),(15,'PUXADA FRENTE',2),(16,'PUXADA TRAS ',2),(17,'CAVALINHO',2),(18,'REMADA BAIXA',2),(19,'PECK DECK FECHADO',2),(20,'MESA FLEXORA',10),(21,'ELEVAÇÃO COM CANELEIRAS',10),(22,'ELEVAÇÃO LATERAL',3),(23,'ELEVAÇÃO FRONTAL',3),(24,'ELEVAÇÃO UNILATERAL NO CROSS',3),(25,'SMITH COM BARRA SOLTA FRENTE',3),(26,'SMITH COM BARRA SOLTA TRAS',3),(27,'BURRINHO',9),(28,'PANTURRILHA NO LEG 45',9),(30,'SUPINO RETO',1),(31,'SUPINO INCLINADO',1),(32,'SUPINO DECLINADO',1),(33,'CROSS OVER',1),(34,'PECK DECK',1),(35,'MESA EXTENSORA',7),(36,'SMITH',7),(37,'AVANÇO',7),(38,'AGACHAMENTO',8),(39,'LEG 45',8),(40,'TESTA',5),(42,'TRICEPS CORDA',5),(43,'TRICEPS UNILATERAL',5),(44,'PANTURRILHA COM CORPO',9);
+/*!40000 ALTER TABLE `tb_exercicios` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `tb_frequencia_alunos`
@@ -144,6 +168,16 @@ CREATE TABLE `tb_frequencia_alunos` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
+-- Dumping data for table `tb_frequencia_alunos`
+--
+
+LOCK TABLES `tb_frequencia_alunos` WRITE;
+/*!40000 ALTER TABLE `tb_frequencia_alunos` DISABLE KEYS */;
+INSERT INTO `tb_frequencia_alunos` VALUES (1,'2018-10-02'),(2,'2018-10-02'),(3,'2018-09-28'),(4,'2018-10-02'),(5,'2018-10-02'),(6,'2018-09-28'),(7,'2018-09-20'),(8,'2018-10-04');
+/*!40000 ALTER TABLE `tb_frequencia_alunos` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `tb_frequencia_alunos_historico`
 --
 
@@ -158,10 +192,20 @@ CREATE TABLE `tb_frequencia_alunos_historico` (
   `HR_SAIDA` varchar(10) DEFAULT NULL,
   `ON_OFF` tinyint(1) DEFAULT '0',
   PRIMARY KEY (`CD_FREQUENCIA`),
-  KEY `FK_CD_REGISTRO` (`CD_REGISTRO`),
-  CONSTRAINT `FK_CD_REGISTRO` FOREIGN KEY (`CD_REGISTRO`) REFERENCES `tb_alunos` (`CD_REGISTRO`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  KEY `CD_REGISTRO` (`CD_REGISTRO`),
+  CONSTRAINT `tb_frequencia_alunos_historico_ibfk_1` FOREIGN KEY (`CD_REGISTRO`) REFERENCES `tb_alunos` (`CD_REGISTRO`)
+) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `tb_frequencia_alunos_historico`
+--
+
+LOCK TABLES `tb_frequencia_alunos_historico` WRITE;
+/*!40000 ALTER TABLE `tb_frequencia_alunos_historico` DISABLE KEYS */;
+INSERT INTO `tb_frequencia_alunos_historico` VALUES (1,1,'2018-09-27','21:47:02','21:54:35',0),(2,2,'2018-09-28','08:38:24','08:44:13',0),(3,3,'2018-09-28','08:50:16','08:52:19',0),(4,4,'2018-09-28','09:05:28','09:05:36',0),(5,5,'2018-09-28','09:19:07','09:22:56',0),(6,5,'2018-09-28','09:22:52','09:22:56',0),(7,6,'2018-09-28','09:22:59','09:23:02',0),(8,7,'2018-09-28','09:30:25','09:30:30',0),(9,5,'2018-10-02','12:01:26','12:01:29',0),(10,1,'2018-10-02','12:01:53','12:02:04',0),(11,2,'2018-10-02','12:01:57','12:02:07',0),(12,4,'2018-10-02','12:02:00','12:02:10',0),(13,8,'2018-10-02','15:22:15','15:22:20',0),(14,8,'2018-10-04','10:18:41','10:18:48',0);
+/*!40000 ALTER TABLE `tb_frequencia_alunos_historico` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `tb_historico_pagamentos_alunos`
@@ -177,10 +221,20 @@ CREATE TABLE `tb_historico_pagamentos_alunos` (
   `DT_PAGAMENTO` date DEFAULT NULL,
   `VALOR_PAGO` float DEFAULT NULL,
   PRIMARY KEY (`CD_PAGAMENTO`),
-  KEY `FK_CD_REGISTRO1` (`CD_REGISTRO`),
-  CONSTRAINT `FK_CD_REGISTRO1` FOREIGN KEY (`CD_REGISTRO`) REFERENCES `tb_alunos` (`CD_REGISTRO`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+  KEY `CD_REGISTRO` (`CD_REGISTRO`),
+  CONSTRAINT `tb_historico_pagamentos_alunos_ibfk_1` FOREIGN KEY (`CD_REGISTRO`) REFERENCES `tb_alunos` (`CD_REGISTRO`)
+) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `tb_historico_pagamentos_alunos`
+--
+
+LOCK TABLES `tb_historico_pagamentos_alunos` WRITE;
+/*!40000 ALTER TABLE `tb_historico_pagamentos_alunos` DISABLE KEYS */;
+INSERT INTO `tb_historico_pagamentos_alunos` VALUES (1,1,'2018-10-10',NULL,NULL),(2,2,'2018-10-10',NULL,NULL),(3,3,'2018-09-07','2018-10-04',85),(4,4,'2018-10-30',NULL,NULL),(5,5,'2018-05-01',NULL,NULL),(6,6,'2018-05-01',NULL,NULL),(7,7,'2018-10-15',NULL,NULL),(8,8,'2018-01-01','2018-10-04',80),(9,8,'2018-02-01','2018-10-04',95),(10,8,'2018-03-01','2018-10-04',92),(11,8,'2018-04-01','2018-10-04',94),(12,8,'2018-05-01','2018-10-04',90),(13,8,'2018-09-01','2018-10-04',90),(14,3,'2018-11-01',NULL,NULL),(15,8,'2018-11-05',NULL,NULL);
+/*!40000 ALTER TABLE `tb_historico_pagamentos_alunos` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `tb_membros`
@@ -194,8 +248,18 @@ CREATE TABLE `tb_membros` (
   `NM_MEMBRO` varchar(50) DEFAULT NULL,
   PRIMARY KEY (`CD_MEMBRO`),
   UNIQUE KEY `NM_MEMBRO` (`NM_MEMBRO`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `tb_membros`
+--
+
+LOCK TABLES `tb_membros` WRITE;
+/*!40000 ALTER TABLE `tb_membros` DISABLE KEYS */;
+INSERT INTO `tb_membros` VALUES (12,'ABDOMEN'),(11,'AERÓBICO'),(6,'ANTE BRAÇO'),(4,'BÍCEPS'),(2,'COSTAS'),(10,'GLÚTEOS'),(3,'OMBRO'),(9,'PANTURRILHA'),(1,'PEITO'),(7,'POSTERIOR DE COXA'),(8,'QUADRICEPS'),(5,'TRÍCEPS');
+/*!40000 ALTER TABLE `tb_membros` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `tb_mod_alunos`
@@ -216,26 +280,36 @@ CREATE TABLE `tb_mod_alunos` (
   `CD_MODALIDADE7` int(3) DEFAULT NULL,
   `CD_MODALIDADE8` int(3) DEFAULT NULL,
   PRIMARY KEY (`CD_MOD_ALUNO`),
-  KEY `FK_CD_REGISTRO2` (`CD_REGISTRO`),
-  KEY `FK_CD_MODALIDADE1` (`CD_MODALIDADE1`),
-  KEY `FK_CD_MODALIDADE2` (`CD_MODALIDADE2`),
-  KEY `FK_CD_MODALIDADE3` (`CD_MODALIDADE3`),
-  KEY `FK_CD_MODALIDADE4` (`CD_MODALIDADE4`),
-  KEY `FK_CD_MODALIDADE5` (`CD_MODALIDADE5`),
-  KEY `FK_CD_MODALIDADE6` (`CD_MODALIDADE6`),
-  KEY `FK_CD_MODALIDADE7` (`CD_MODALIDADE7`),
-  KEY `FK_CD_MODALIDADE8` (`CD_MODALIDADE8`),
-  CONSTRAINT `FK_CD_MODALIDADE1` FOREIGN KEY (`CD_MODALIDADE1`) REFERENCES `tb_modalidades` (`CD_MODALIDADE`),
-  CONSTRAINT `FK_CD_MODALIDADE2` FOREIGN KEY (`CD_MODALIDADE2`) REFERENCES `tb_modalidades` (`CD_MODALIDADE`),
-  CONSTRAINT `FK_CD_MODALIDADE3` FOREIGN KEY (`CD_MODALIDADE3`) REFERENCES `tb_modalidades` (`CD_MODALIDADE`),
-  CONSTRAINT `FK_CD_MODALIDADE4` FOREIGN KEY (`CD_MODALIDADE4`) REFERENCES `tb_modalidades` (`CD_MODALIDADE`),
-  CONSTRAINT `FK_CD_MODALIDADE5` FOREIGN KEY (`CD_MODALIDADE5`) REFERENCES `tb_modalidades` (`CD_MODALIDADE`),
-  CONSTRAINT `FK_CD_MODALIDADE6` FOREIGN KEY (`CD_MODALIDADE6`) REFERENCES `tb_modalidades` (`CD_MODALIDADE`),
-  CONSTRAINT `FK_CD_MODALIDADE7` FOREIGN KEY (`CD_MODALIDADE7`) REFERENCES `tb_modalidades` (`CD_MODALIDADE`),
-  CONSTRAINT `FK_CD_MODALIDADE8` FOREIGN KEY (`CD_MODALIDADE8`) REFERENCES `tb_modalidades` (`CD_MODALIDADE`),
-  CONSTRAINT `FK_CD_REGISTRO2` FOREIGN KEY (`CD_REGISTRO`) REFERENCES `tb_alunos` (`CD_REGISTRO`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  KEY `CD_REGISTRO` (`CD_REGISTRO`),
+  KEY `CD_MODALIDADE1` (`CD_MODALIDADE1`),
+  KEY `CD_MODALIDADE2` (`CD_MODALIDADE2`),
+  KEY `CD_MODALIDADE3` (`CD_MODALIDADE3`),
+  KEY `CD_MODALIDADE4` (`CD_MODALIDADE4`),
+  KEY `CD_MODALIDADE5` (`CD_MODALIDADE5`),
+  KEY `CD_MODALIDADE6` (`CD_MODALIDADE6`),
+  KEY `CD_MODALIDADE7` (`CD_MODALIDADE7`),
+  KEY `CD_MODALIDADE8` (`CD_MODALIDADE8`),
+  CONSTRAINT `tb_mod_alunos_ibfk_1` FOREIGN KEY (`CD_REGISTRO`) REFERENCES `tb_alunos` (`CD_REGISTRO`),
+  CONSTRAINT `tb_mod_alunos_ibfk_2` FOREIGN KEY (`CD_MODALIDADE1`) REFERENCES `tb_modalidades` (`CD_MODALIDADE`),
+  CONSTRAINT `tb_mod_alunos_ibfk_3` FOREIGN KEY (`CD_MODALIDADE2`) REFERENCES `tb_modalidades` (`CD_MODALIDADE`),
+  CONSTRAINT `tb_mod_alunos_ibfk_4` FOREIGN KEY (`CD_MODALIDADE3`) REFERENCES `tb_modalidades` (`CD_MODALIDADE`),
+  CONSTRAINT `tb_mod_alunos_ibfk_5` FOREIGN KEY (`CD_MODALIDADE4`) REFERENCES `tb_modalidades` (`CD_MODALIDADE`),
+  CONSTRAINT `tb_mod_alunos_ibfk_6` FOREIGN KEY (`CD_MODALIDADE5`) REFERENCES `tb_modalidades` (`CD_MODALIDADE`),
+  CONSTRAINT `tb_mod_alunos_ibfk_7` FOREIGN KEY (`CD_MODALIDADE6`) REFERENCES `tb_modalidades` (`CD_MODALIDADE`),
+  CONSTRAINT `tb_mod_alunos_ibfk_8` FOREIGN KEY (`CD_MODALIDADE7`) REFERENCES `tb_modalidades` (`CD_MODALIDADE`),
+  CONSTRAINT `tb_mod_alunos_ibfk_9` FOREIGN KEY (`CD_MODALIDADE8`) REFERENCES `tb_modalidades` (`CD_MODALIDADE`)
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `tb_mod_alunos`
+--
+
+LOCK TABLES `tb_mod_alunos` WRITE;
+/*!40000 ALTER TABLE `tb_mod_alunos` DISABLE KEYS */;
+INSERT INTO `tb_mod_alunos` VALUES (1,1,4,1,NULL,NULL,NULL,NULL,NULL,NULL),(2,2,2,5,3,NULL,NULL,NULL,NULL,NULL),(3,3,1,NULL,NULL,NULL,NULL,NULL,NULL,NULL),(4,4,4,NULL,NULL,NULL,NULL,NULL,NULL,NULL),(5,5,2,NULL,NULL,NULL,NULL,NULL,NULL,NULL),(6,6,1,NULL,NULL,NULL,NULL,NULL,NULL,NULL),(7,7,6,NULL,NULL,NULL,NULL,NULL,NULL,NULL);
+/*!40000 ALTER TABLE `tb_mod_alunos` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `tb_modalidades`
@@ -249,8 +323,18 @@ CREATE TABLE `tb_modalidades` (
   `NM_MODALIDADE` varchar(50) DEFAULT NULL,
   PRIMARY KEY (`CD_MODALIDADE`),
   UNIQUE KEY `NM_MODALIDADE` (`NM_MODALIDADE`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `tb_modalidades`
+--
+
+LOCK TABLES `tb_modalidades` WRITE;
+/*!40000 ALTER TABLE `tb_modalidades` DISABLE KEYS */;
+INSERT INTO `tb_modalidades` VALUES (4,'BOXE'),(2,'CROSS FIT'),(5,'DANÇA'),(3,'FUNCIONAL'),(1,'MUSCULAÇÃO'),(6,'NATAÇÃO');
+/*!40000 ALTER TABLE `tb_modalidades` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `tb_planos_alunos`
@@ -269,10 +353,20 @@ CREATE TABLE `tb_planos_alunos` (
   `DESCONTO` float DEFAULT NULL,
   `VENCIMENTO` int(2) DEFAULT NULL,
   PRIMARY KEY (`CD_PLANO_ALUNO`),
-  KEY `FK_CD_REGISTRO3` (`CD_REGISTRO`),
-  CONSTRAINT `FK_CD_REGISTRO3` FOREIGN KEY (`CD_REGISTRO`) REFERENCES `tb_alunos` (`CD_REGISTRO`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+  KEY `CD_REGISTRO` (`CD_REGISTRO`),
+  CONSTRAINT `tb_planos_alunos_ibfk_1` FOREIGN KEY (`CD_REGISTRO`) REFERENCES `tb_alunos` (`CD_REGISTRO`)
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `tb_planos_alunos`
+--
+
+LOCK TABLES `tb_planos_alunos` WRITE;
+/*!40000 ALTER TABLE `tb_planos_alunos` DISABLE KEYS */;
+INSERT INTO `tb_planos_alunos` VALUES (1,1,0,1,100,'%',0,5),(2,3,1,2,90,'%',0,1),(3,1,1,1,100,'%',0,10),(4,5,0,2,90,'%',0,1),(5,5,0,4,65,'%',0,1),(6,5,1,3,80,'%',0,1);
+/*!40000 ALTER TABLE `tb_planos_alunos` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `tb_planos_valores`
@@ -286,8 +380,18 @@ CREATE TABLE `tb_planos_valores` (
   `NM_PLANO` varchar(30) DEFAULT NULL,
   `VALOR` float DEFAULT NULL,
   PRIMARY KEY (`CD_PLANO`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `tb_planos_valores`
+--
+
+LOCK TABLES `tb_planos_valores` WRITE;
+/*!40000 ALTER TABLE `tb_planos_valores` DISABLE KEYS */;
+INSERT INTO `tb_planos_valores` VALUES (1,'Mensal',100),(2,'Bimestral',90),(3,'Trimestral',80),(4,'Semestral',65);
+/*!40000 ALTER TABLE `tb_planos_valores` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `tb_repeticoes`
@@ -301,8 +405,18 @@ CREATE TABLE `tb_repeticoes` (
   `NM_REPETICAO` varchar(50) DEFAULT NULL,
   PRIMARY KEY (`CD_REPETICAO`),
   UNIQUE KEY `NM_REPETICAO` (`NM_REPETICAO`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `tb_repeticoes`
+--
+
+LOCK TABLES `tb_repeticoes` WRITE;
+/*!40000 ALTER TABLE `tb_repeticoes` DISABLE KEYS */;
+INSERT INTO `tb_repeticoes` VALUES (8,'12x10x8x6'),(1,'3x10'),(2,'3x12'),(3,'3x15'),(6,'4x10'),(7,'4x12'),(4,'4x6'),(5,'4x8'),(9,'6x8x10x12'),(10,'fadiga');
+/*!40000 ALTER TABLE `tb_repeticoes` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `tb_senhas`
@@ -320,6 +434,16 @@ CREATE TABLE `tb_senhas` (
   UNIQUE KEY `USUARIO` (`USUARIO`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `tb_senhas`
+--
+
+LOCK TABLES `tb_senhas` WRITE;
+/*!40000 ALTER TABLE `tb_senhas` DISABLE KEYS */;
+INSERT INTO `tb_senhas` VALUES ('','USUÁRIO DE TESTES','','teste@outlook.com');
+/*!40000 ALTER TABLE `tb_senhas` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `tb_treinosa`
@@ -444,10 +568,20 @@ CREATE TABLE `tb_treinosa` (
   `REPETICAOA5_6` int(3) DEFAULT NULL,
   `OBSERVACAOA5_6` varchar(100) DEFAULT NULL,
   PRIMARY KEY (`CD_TREINOA`),
-  KEY `FK_CD_REGISTRO4` (`CD_REGISTRO`),
-  CONSTRAINT `FK_CD_REGISTRO4` FOREIGN KEY (`CD_REGISTRO`) REFERENCES `tb_alunos` (`CD_REGISTRO`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  KEY `CD_REGISTRO` (`CD_REGISTRO`),
+  CONSTRAINT `tb_treinosa_ibfk_1` FOREIGN KEY (`CD_REGISTRO`) REFERENCES `tb_alunos` (`CD_REGISTRO`)
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `tb_treinosa`
+--
+
+LOCK TABLES `tb_treinosa` WRITE;
+/*!40000 ALTER TABLE `tb_treinosa` DISABLE KEYS */;
+INSERT INTO `tb_treinosa` VALUES (1,'27/09/2018','27/10/2018',1,1,30,1,'',31,1,'',32,1,'',34,2,'Peck Deck e cross fazer junto.',33,2,'',33,8,'',33,8,'',4,13,2,'',14,1,'',11,3,'',12,6,'',13,8,'',13,8,'',13,8,'',12,1,6,'',1,3,'',1,3,'',3,8,'',3,8,'',3,8,'',3,8,'',12,3,8,'',3,8,'',3,8,'',3,8,'',3,8,'',3,8,'',3,8,'',12,3,8,'',3,8,'',3,8,'',3,8,'',3,8,'',3,8,'',3,8,''),(2,'28/09/2018','28/11/2018',2,8,38,8,'',39,3,'',38,8,'',38,8,'',38,8,'',38,8,'',38,8,'',7,37,6,'',36,6,'',35,7,'',37,8,'',37,8,'',37,8,'',37,8,'',9,27,1,'',28,3,'',27,8,'',27,8,'',27,8,'',27,8,'',27,8,'',12,3,10,'',3,8,'',3,8,'',3,8,'',3,8,'',3,8,'',3,8,'',12,3,8,'',3,8,'',3,8,'',3,8,'',3,8,'',3,8,'',3,8,''),(3,'10/08/2018','10/11/2018',3,12,3,8,'',3,8,'',3,8,'',3,8,'',3,8,'',3,8,'',3,8,'',12,3,8,'',3,8,'',3,8,'',3,8,'',3,8,'',3,8,'',3,8,'',12,3,8,'',3,8,'',3,8,'',3,8,'',3,8,'',3,8,'',3,8,'',12,3,8,'',3,8,'',3,8,'',3,8,'',3,8,'',3,8,'',3,8,'',12,3,8,'',3,8,'',3,8,'',3,8,'',3,8,'',3,8,'',3,8,''),(4,'01/07/2018','25/09/2018',4,12,3,8,'TREINO DE BOXE',3,8,'',3,8,'',3,8,'',3,8,'',3,8,'',3,8,'',12,3,8,'',3,8,'',3,8,'',3,8,'',3,8,'',3,8,'',3,8,'',12,3,8,'',3,8,'',3,8,'',3,8,'',3,8,'',3,8,'',3,8,'',12,3,8,'',3,8,'',3,8,'',3,8,'',3,8,'',3,8,'',3,8,'',12,3,8,'',3,8,'',3,8,'',3,8,'',3,8,'',3,8,'',3,8,''),(5,'28/07/2018','25/09/2018',6,12,3,8,'',3,8,'',3,8,'',3,8,'',3,8,'',3,8,'',3,8,'',12,3,8,'',3,8,'',3,8,'',3,8,'',3,8,'',3,8,'',3,8,'',12,3,8,'',3,8,'',3,8,'',3,8,'',3,8,'',3,8,'',3,8,'',12,3,8,'',3,8,'',3,8,'',3,8,'',3,8,'',3,8,'',3,8,'',12,3,8,'',3,8,'',3,8,'',3,8,'',3,8,'',3,8,'',3,8,'');
+/*!40000 ALTER TABLE `tb_treinosa` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `tb_treinosb`
@@ -570,10 +704,20 @@ CREATE TABLE `tb_treinosb` (
   `REPETICAOB5_6` int(3) DEFAULT NULL,
   `OBSERVACAOB5_6` varchar(100) DEFAULT NULL,
   PRIMARY KEY (`CD_TREINOB`),
-  KEY `FK_CD_REGISTRO5` (`CD_REGISTRO`),
-  CONSTRAINT `FK_CD_REGISTRO5` FOREIGN KEY (`CD_REGISTRO`) REFERENCES `tb_alunos` (`CD_REGISTRO`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  KEY `CD_REGISTRO` (`CD_REGISTRO`),
+  CONSTRAINT `tb_treinosb_ibfk_1` FOREIGN KEY (`CD_REGISTRO`) REFERENCES `tb_alunos` (`CD_REGISTRO`)
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `tb_treinosb`
+--
+
+LOCK TABLES `tb_treinosb` WRITE;
+/*!40000 ALTER TABLE `tb_treinosb` DISABLE KEYS */;
+INSERT INTO `tb_treinosb` VALUES (1,1,2,15,1,'',16,1,'',18,1,'',19,1,'Fazer junto peck deck e cavalinho',17,8,'',17,8,'',17,8,'',5,40,1,'',42,1,'',43,1,'',40,8,'',40,8,'',40,8,'',40,8,'',12,3,3,'',3,3,'',3,3,'',3,8,'',3,8,'',3,8,'',3,8,'',12,3,8,'',3,8,'',3,8,'',3,8,'',3,8,'',3,8,'',3,8,'',12,3,8,'',3,8,'',3,8,'',3,8,'',3,8,'',3,8,'',3,8,''),(2,2,11,5,10,'',6,10,'',4,10,'',5,8,'',5,8,'',5,8,'',5,8,'',1,33,1,'',34,1,'',30,1,'',33,8,'',33,8,'',33,8,'',33,8,'',4,13,1,'',14,1,'',11,1,'',13,8,'',13,8,'',13,8,'',13,8,'',12,2,10,'',3,8,'',3,8,'',3,8,'',3,8,'',3,8,'',3,8,'',12,3,8,'',3,8,'',3,8,'',3,8,'',3,8,'',3,8,'',3,8,''),(3,3,12,3,8,'',3,8,'',3,8,'',3,8,'',3,8,'',3,8,'',3,8,'',12,3,8,'',3,8,'',3,8,'',3,8,'',3,8,'',3,8,'',3,8,'',12,3,8,'',3,8,'',3,8,'',3,8,'',3,8,'',3,8,'',3,8,'',12,3,8,'',3,8,'',3,8,'',3,8,'',3,8,'',3,8,'',3,8,'',12,3,8,'',3,8,'',3,8,'',3,8,'',3,8,'',3,8,'',3,8,''),(4,4,12,3,8,'',3,8,'',3,8,'',3,8,'',3,8,'',3,8,'',3,8,'',12,3,8,'',3,8,'',3,8,'',3,8,'',3,8,'',3,8,'',3,8,'',12,3,8,'',3,8,'',3,8,'',3,8,'',3,8,'',3,8,'',3,8,'',12,3,8,'',3,8,'',3,8,'',3,8,'',3,8,'',3,8,'',3,8,'',12,3,8,'',3,8,'',3,8,'',3,8,'',3,8,'',3,8,'',3,8,''),(5,6,12,3,8,'',3,8,'',3,8,'',3,8,'',3,8,'',3,8,'',3,8,'',12,3,8,'',3,8,'',3,8,'',3,8,'',3,8,'',3,8,'',3,8,'',12,3,8,'',3,8,'',3,8,'',3,8,'',3,8,'',3,8,'',3,8,'',12,3,8,'',3,8,'',3,8,'',3,8,'',3,8,'',3,8,'',3,8,'',12,3,8,'',3,8,'',3,8,'',3,8,'',3,8,'',3,8,'',3,8,'');
+/*!40000 ALTER TABLE `tb_treinosb` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `tb_treinosc`
@@ -696,10 +840,20 @@ CREATE TABLE `tb_treinosc` (
   `REPETICAOC5_6` int(3) DEFAULT NULL,
   `OBSERVACAOC5_6` varchar(100) DEFAULT NULL,
   PRIMARY KEY (`CD_TREINOC`),
-  KEY `FK_CD_REGISTRO6` (`CD_REGISTRO`),
-  CONSTRAINT `FK_CD_REGISTRO6` FOREIGN KEY (`CD_REGISTRO`) REFERENCES `tb_alunos` (`CD_REGISTRO`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  KEY `CD_REGISTRO` (`CD_REGISTRO`),
+  CONSTRAINT `tb_treinosc_ibfk_1` FOREIGN KEY (`CD_REGISTRO`) REFERENCES `tb_alunos` (`CD_REGISTRO`)
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `tb_treinosc`
+--
+
+LOCK TABLES `tb_treinosc` WRITE;
+/*!40000 ALTER TABLE `tb_treinosc` DISABLE KEYS */;
+INSERT INTO `tb_treinosc` VALUES (1,1,3,23,2,'',22,1,'',24,1,'',25,1,'',23,8,'',23,8,'',23,8,'',10,21,1,'',20,1,'',21,8,'',21,8,'',21,8,'',21,8,'',21,8,'',9,27,3,'',28,3,'',27,8,'',27,8,'',27,8,'',27,8,'',27,8,'',8,38,1,'',39,3,'',38,8,'',38,8,'',38,8,'',38,8,'',38,8,'',7,37,3,'',35,3,'',36,3,'',37,8,'',37,8,'',37,8,'',37,8,''),(2,2,10,21,1,'',20,3,'',21,8,'',21,8,'',21,8,'',21,8,'',21,8,'',12,1,10,'',2,10,'',3,8,'',3,8,'',3,8,'',3,8,'',3,8,'',12,3,8,'',3,8,'',3,8,'',3,8,'',3,8,'',3,8,'',3,8,'',12,3,8,'',3,8,'',3,8,'',3,8,'',3,8,'',3,8,'',3,8,'',12,3,8,'',3,8,'',3,8,'',3,8,'',3,8,'',3,8,'',3,8,''),(3,3,12,3,8,'',3,8,'',3,8,'',3,8,'',3,8,'',3,8,'',3,8,'',12,3,8,'',3,8,'',3,8,'',3,8,'',3,8,'',3,8,'',3,8,'',12,3,8,'',3,8,'',3,8,'',3,8,'',3,8,'',3,8,'',3,8,'',12,3,8,'',3,8,'',3,8,'',3,8,'',3,8,'',3,8,'',3,8,'',12,3,8,'',3,8,'',3,8,'',3,8,'',3,8,'',3,8,'',3,8,''),(4,4,12,3,8,'',3,8,'',3,8,'',3,8,'',3,8,'',3,8,'',3,8,'',12,3,8,'',3,8,'',3,8,'',3,8,'',3,8,'',3,8,'',3,8,'',12,3,8,'',3,8,'',3,8,'',3,8,'',3,8,'',3,8,'',3,8,'',12,3,8,'',3,8,'',3,8,'',3,8,'',3,8,'',3,8,'',3,8,'',12,3,8,'',3,8,'',3,8,'',3,8,'',3,8,'',3,8,'',3,8,''),(5,6,12,3,8,'',3,8,'',3,8,'',3,8,'',3,8,'',3,8,'',3,8,'',12,3,8,'',3,8,'',3,8,'',3,8,'',3,8,'',3,8,'',3,8,'',12,3,8,'',3,8,'',3,8,'',3,8,'',3,8,'',3,8,'',3,8,'',12,3,8,'',3,8,'',3,8,'',3,8,'',3,8,'',3,8,'',3,8,'',12,3,8,'',3,8,'',3,8,'',3,8,'',3,8,'',3,8,'',3,8,'');
+/*!40000 ALTER TABLE `tb_treinosc` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Temporary view structure for view `v_max_cd_registro`
@@ -741,4 +895,4 @@ SET character_set_client = @saved_cs_client;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-10-10 16:14:09
+-- Dump completed on 2018-10-09 16:14:18
