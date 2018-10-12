@@ -11,12 +11,6 @@ VIEW v_max_cd_registro AS
         tb_planos_alunos c
     GROUP BY c.CD_REGISTRO;
 
-SELECT c.cd_registro,c.valor, 
-        MAX(c.CD_PLANO_ALUNO) AS MAX1
-    FROM
-        tb_planos_alunos c
-    GROUP BY c.CD_REGISTRO,c.valor;
-
 CREATE TABLE IF NOT EXISTS TB_SENHAS (USUARIO VARCHAR(20) UNIQUE
 									 ,NOME VARCHAR(100)
                                      ,SENHA VARCHAR(20)
