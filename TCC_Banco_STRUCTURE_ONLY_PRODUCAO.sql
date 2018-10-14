@@ -454,8 +454,9 @@ DROP TABLE IF EXISTS `tb_senhas`;
 CREATE TABLE `tb_senhas` (
   `USUARIO` varchar(20) NOT NULL,
   `NOME` varchar(100) DEFAULT NULL,
-  `SENHA` varchar(20) DEFAULT NULL,
+  `SENHA` varchar(100) DEFAULT NULL,
   `EMAIL` varchar(50) NOT NULL,
+  `ESQ_SENHA` tinyint(1) DEFAULT '0',
   PRIMARY KEY (`USUARIO`),
   UNIQUE KEY `USUARIO` (`USUARIO`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -467,7 +468,7 @@ CREATE TABLE `tb_senhas` (
 
 LOCK TABLES `tb_senhas` WRITE;
 /*!40000 ALTER TABLE `tb_senhas` DISABLE KEYS */;
-INSERT INTO `tb_senhas` VALUES ('','USUÁRIO DE TESTES','','teste@outlook.com'),('anunes','Arthur Nunes','2','artthur.nunes@outlook.com');
+INSERT INTO `tb_senhas` VALUES ('','USUÁRIO DE TESTES','d41d8cd98f00b204e9800998ecf8427e','teste@outlook.com',0),('anunes','Arthur Nunes','c4ca4238a0b923820dcc509a6f75849b','artthur.nunes@outlook.com',0);
 /*!40000 ALTER TABLE `tb_senhas` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -952,4 +953,4 @@ SET character_set_client = @saved_cs_client;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-10-14 10:54:40
+-- Dump completed on 2018-10-14 19:55:11

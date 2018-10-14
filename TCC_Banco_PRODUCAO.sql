@@ -454,8 +454,9 @@ DROP TABLE IF EXISTS `tb_senhas`;
 CREATE TABLE `tb_senhas` (
   `USUARIO` varchar(20) NOT NULL,
   `NOME` varchar(100) DEFAULT NULL,
-  `SENHA` varchar(20) DEFAULT NULL,
+  `SENHA` varchar(100) DEFAULT NULL,
   `EMAIL` varchar(50) NOT NULL,
+  `ESQ_SENHA` tinyint(1) DEFAULT '0',
   PRIMARY KEY (`USUARIO`),
   UNIQUE KEY `USUARIO` (`USUARIO`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -467,7 +468,7 @@ CREATE TABLE `tb_senhas` (
 
 LOCK TABLES `tb_senhas` WRITE;
 /*!40000 ALTER TABLE `tb_senhas` DISABLE KEYS */;
-INSERT INTO `tb_senhas` VALUES ('','USUÁRIO DE TESTES','','teste@outlook.com');
+INSERT INTO `tb_senhas` VALUES ('','USUÁRIO DE TESTES','d41d8cd98f00b204e9800998ecf8427e','teste@outlook.com',0),('anunes','Arthur Nunes','c4ca4238a0b923820dcc509a6f75849b','artthur.nunes@outlook.com',0);
 /*!40000 ALTER TABLE `tb_senhas` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -596,7 +597,7 @@ CREATE TABLE `tb_treinosa` (
   PRIMARY KEY (`CD_TREINOA`),
   KEY `FK_CD_REGISTRO4` (`CD_REGISTRO`),
   CONSTRAINT `FK_CD_REGISTRO4` FOREIGN KEY (`CD_REGISTRO`) REFERENCES `tb_alunos` (`CD_REGISTRO`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -605,7 +606,7 @@ CREATE TABLE `tb_treinosa` (
 
 LOCK TABLES `tb_treinosa` WRITE;
 /*!40000 ALTER TABLE `tb_treinosa` DISABLE KEYS */;
-INSERT INTO `tb_treinosa` VALUES (1,'10/09/2018','10/12/2018',1,7,8,14,'15 minutos',73,14,'',73,14,'',73,14,'',73,14,'',73,14,'',73,14,'',1,46,1,'',50,1,'',47,1,'',46,14,'',46,14,'',46,14,'',46,14,'',3,18,3,'',19,3,'',16,3,'',12,3,'',18,14,'',18,14,'',18,14,'',8,1,14,'',71,14,'',71,14,'',71,14,'',71,14,'',71,14,'',71,14,'',9,NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,''),(2,'01/01/2018','01/10/2018',2,8,5,14,'',71,14,'',71,14,'',71,14,'',71,14,'',71,14,'',71,14,'',2,28,14,'',28,14,'',28,14,'',28,14,'',28,14,'',28,14,'',28,14,'',5,32,14,'',32,14,'',32,14,'',32,14,'',32,14,'',32,14,'',32,14,'',9,NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',9,NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,''),(3,'10/08/2018','10/10/2018',3,9,NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',9,NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',9,NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',9,NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',9,NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,''),(4,'15/05/2018','15/09/2018',4,7,73,14,'',73,14,'',73,14,'',73,14,'',73,14,'',73,14,'',73,14,'',9,NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',9,NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',9,NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',9,NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'');
+INSERT INTO `tb_treinosa` VALUES (1,'10/09/2018','10/12/2018',1,7,8,14,'15 minutos',73,14,'',73,14,'',73,14,'',73,14,'',73,14,'',73,14,'',1,46,1,'',50,1,'',47,1,'',46,14,'',46,14,'',46,14,'',46,14,'',3,18,3,'',19,3,'',16,3,'',12,3,'',18,14,'',18,14,'',18,14,'',8,1,14,'',71,14,'',71,14,'',71,14,'',71,14,'',71,14,'',71,14,'',9,NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,''),(2,'01/01/2018','01/10/2018',2,8,5,14,'',71,14,'',71,14,'',71,14,'',71,14,'',71,14,'',71,14,'',2,28,14,'',28,14,'',28,14,'',28,14,'',28,14,'',28,14,'',28,14,'',5,32,14,'',32,14,'',32,14,'',32,14,'',32,14,'',32,14,'',32,14,'',9,NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',9,NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,''),(3,'10/08/2018','10/10/2018',3,9,NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',9,NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',9,NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',9,NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',9,NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,''),(4,'15/05/2018','15/09/2018',4,7,73,14,'',73,14,'',73,14,'',73,14,'',73,14,'',73,14,'',73,14,'',9,NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',9,NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',9,NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',9,NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,''),(5,'01/09/2018','01/10/2018',2,3,18,14,'',18,14,'',18,14,'',18,14,'',18,14,'',18,14,'',18,14,'',9,NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',9,NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',9,NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',9,NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,''),(6,'01/10/2018','10/10/2018',2,3,18,14,'',18,14,'',18,14,'',18,14,'',18,14,'',18,14,'',18,14,'',9,NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',9,NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',9,NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',9,NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,''),(7,'10/10/2018','31/12/2018',3,9,NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',9,NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',9,NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',9,NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',9,NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'');
 /*!40000 ALTER TABLE `tb_treinosa` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -732,7 +733,7 @@ CREATE TABLE `tb_treinosb` (
   PRIMARY KEY (`CD_TREINOB`),
   KEY `FK_CD_REGISTRO5` (`CD_REGISTRO`),
   CONSTRAINT `FK_CD_REGISTRO5` FOREIGN KEY (`CD_REGISTRO`) REFERENCES `tb_alunos` (`CD_REGISTRO`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -741,7 +742,7 @@ CREATE TABLE `tb_treinosb` (
 
 LOCK TABLES `tb_treinosb` WRITE;
 /*!40000 ALTER TABLE `tb_treinosb` DISABLE KEYS */;
-INSERT INTO `tb_treinosb` VALUES (1,1,7,10,14,'5 minutos',73,14,'',73,14,'',73,14,'',73,14,'',73,14,'',73,14,'',2,28,1,'',22,1,'',24,1,'',25,1,'',23,1,'',28,14,'',28,14,'',4,67,3,'',68,3,'',64,3,'',67,14,'',67,14,'',67,14,'',67,14,'',8,5,14,'',71,14,'',71,14,'',71,14,'',71,14,'',71,14,'',71,14,'',9,NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,''),(2,2,5,32,14,'',32,14,'',32,14,'',32,14,'',32,14,'',32,14,'',32,14,'',9,NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',9,NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',9,NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',9,NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,''),(3,3,9,NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',9,NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',9,NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',9,NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',9,NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,''),(4,4,1,46,14,'',46,14,'',46,14,'',46,14,'',46,14,'',46,14,'',46,14,'',9,NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',9,NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',9,NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',9,NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'');
+INSERT INTO `tb_treinosb` VALUES (1,1,7,10,14,'5 minutos',73,14,'',73,14,'',73,14,'',73,14,'',73,14,'',73,14,'',2,28,1,'',22,1,'',24,1,'',25,1,'',23,1,'',28,14,'',28,14,'',4,67,3,'',68,3,'',64,3,'',67,14,'',67,14,'',67,14,'',67,14,'',8,5,14,'',71,14,'',71,14,'',71,14,'',71,14,'',71,14,'',71,14,'',9,NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,''),(2,2,5,32,14,'',32,14,'',32,14,'',32,14,'',32,14,'',32,14,'',32,14,'',9,NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',9,NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',9,NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',9,NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,''),(3,3,9,NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',9,NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',9,NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',9,NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',9,NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,''),(4,4,1,46,14,'',46,14,'',46,14,'',46,14,'',46,14,'',46,14,'',46,14,'',9,NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',9,NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',9,NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',9,NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,''),(5,2,5,32,14,'',32,14,'',32,14,'',32,14,'',32,14,'',32,14,'',32,14,'',9,NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',9,NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',9,NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',9,NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,''),(6,2,2,28,14,'',28,14,'',28,14,'',28,14,'',28,14,'',28,14,'',28,14,'',9,NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',9,NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',9,NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',9,NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,''),(7,3,9,NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',9,NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',9,NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',9,NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',9,NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'');
 /*!40000 ALTER TABLE `tb_treinosb` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -868,7 +869,7 @@ CREATE TABLE `tb_treinosc` (
   PRIMARY KEY (`CD_TREINOC`),
   KEY `FK_CD_REGISTRO6` (`CD_REGISTRO`),
   CONSTRAINT `FK_CD_REGISTRO6` FOREIGN KEY (`CD_REGISTRO`) REFERENCES `tb_alunos` (`CD_REGISTRO`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -877,9 +878,22 @@ CREATE TABLE `tb_treinosc` (
 
 LOCK TABLES `tb_treinosc` WRITE;
 /*!40000 ALTER TABLE `tb_treinosc` DISABLE KEYS */;
-INSERT INTO `tb_treinosc` VALUES (1,1,7,7,14,'15 minutos',73,14,'',73,14,'',73,14,'',73,14,'',73,14,'',73,14,'',6,56,4,'',55,4,'',51,4,'',52,4,'Todos 30 segundos pausa',54,4,'',53,4,'',60,4,'',5,32,1,'',35,1,'',37,1,'',32,14,'',32,14,'',32,14,'',32,14,'',8,6,13,'',4,12,'',71,14,'',71,14,'',71,14,'',71,14,'',71,14,'',9,NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,''),(2,2,4,67,14,'',67,14,'',67,14,'',67,14,'',67,14,'',67,14,'',67,14,'',9,NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',9,NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',9,NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',9,NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,''),(3,3,9,NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',9,NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',9,NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',9,NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',9,NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,''),(4,4,6,56,14,'',56,14,'',56,14,'',56,14,'',56,14,'',56,14,'',56,14,'',9,NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',9,NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',9,NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',9,NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'');
+INSERT INTO `tb_treinosc` VALUES (1,1,7,7,14,'15 minutos',73,14,'',73,14,'',73,14,'',73,14,'',73,14,'',73,14,'',6,56,4,'',55,4,'',51,4,'',52,4,'Todos 30 segundos pausa',54,4,'',53,4,'',60,4,'',5,32,1,'',35,1,'',37,1,'',32,14,'',32,14,'',32,14,'',32,14,'',8,6,13,'',4,12,'',71,14,'',71,14,'',71,14,'',71,14,'',71,14,'',9,NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,''),(2,2,4,67,14,'',67,14,'',67,14,'',67,14,'',67,14,'',67,14,'',67,14,'',9,NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',9,NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',9,NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',9,NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,''),(3,3,9,NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',9,NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',9,NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',9,NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',9,NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,''),(4,4,6,56,14,'',56,14,'',56,14,'',56,14,'',56,14,'',56,14,'',56,14,'',9,NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',9,NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',9,NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',9,NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,''),(5,2,6,56,14,'',56,14,'',56,14,'',56,14,'',56,14,'',56,14,'',56,14,'',9,NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',9,NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',9,NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',9,NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,''),(6,2,6,56,14,'',56,14,'',56,14,'',56,14,'',56,14,'',56,14,'',56,14,'',9,NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',9,NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',9,NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',9,NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,''),(7,3,9,NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',9,NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',9,NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',9,NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',9,NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'',NULL,14,'');
 /*!40000 ALTER TABLE `tb_treinosc` ENABLE KEYS */;
 UNLOCK TABLES;
+
+--
+-- Temporary view structure for view `v_max_cd_plano`
+--
+
+DROP TABLE IF EXISTS `v_max_cd_plano`;
+/*!50001 DROP VIEW IF EXISTS `v_max_cd_plano`*/;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
+/*!50001 CREATE VIEW `v_max_cd_plano` AS SELECT 
+ 1 AS `CD_REGISTRO`,
+ 1 AS `MAX2`*/;
+SET character_set_client = @saved_cs_client;
 
 --
 -- Temporary view structure for view `v_max_cd_registro`
@@ -893,6 +907,24 @@ SET character_set_client = utf8;
  1 AS `cd_registro`,
  1 AS `MAX1`*/;
 SET character_set_client = @saved_cs_client;
+
+--
+-- Final view structure for view `v_max_cd_plano`
+--
+
+/*!50001 DROP VIEW IF EXISTS `v_max_cd_plano`*/;
+/*!50001 SET @saved_cs_client          = @@character_set_client */;
+/*!50001 SET @saved_cs_results         = @@character_set_results */;
+/*!50001 SET @saved_col_connection     = @@collation_connection */;
+/*!50001 SET character_set_client      = utf8 */;
+/*!50001 SET character_set_results     = utf8 */;
+/*!50001 SET collation_connection      = utf8_general_ci */;
+/*!50001 CREATE ALGORITHM=UNDEFINED */
+/*!50013 DEFINER=`root`@`localhost` SQL SECURITY DEFINER */
+/*!50001 VIEW `v_max_cd_plano` AS select `tb_treinosa`.`CD_REGISTRO` AS `CD_REGISTRO`,max(`tb_treinosa`.`CD_TREINOA`) AS `MAX2` from `tb_treinosa` where (str_to_date(`tb_treinosa`.`DT_FIM`,'%e/%m/%Y') < now()) group by `tb_treinosa`.`CD_REGISTRO` */;
+/*!50001 SET character_set_client      = @saved_cs_client */;
+/*!50001 SET character_set_results     = @saved_cs_results */;
+/*!50001 SET collation_connection      = @saved_col_connection */;
 
 --
 -- Final view structure for view `v_max_cd_registro`
@@ -921,4 +953,4 @@ SET character_set_client = @saved_cs_client;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-10-12 14:58:32
+-- Dump completed on 2018-10-14 20:44:34

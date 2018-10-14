@@ -11,10 +11,13 @@ VIEW v_max_cd_registro AS
         tb_planos_alunos c
     GROUP BY c.CD_REGISTRO;
 
+drop table tb_senhas;
+
 CREATE TABLE IF NOT EXISTS TB_SENHAS (USUARIO VARCHAR(20) UNIQUE
 									 ,NOME VARCHAR(100)
-                                     ,SENHA VARCHAR(20)
-                                     ,EMAIL VARCHAR(50) NOT NULL,
+                                     ,SENHA VARCHAR(100)
+                                     ,EMAIL VARCHAR(50) NOT NULL
+                                     ,ESQ_SENHA BOOLEAN DEFAULT FALSE,
 PRIMARY KEY (USUARIO)
 )ENGINE = INNODB;
 
